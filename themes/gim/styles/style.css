@@ -97,6 +97,14 @@ BODY {
 	content:'\201C'; /* ldquo */
 	}
 
+
+/* Tables */
+.slide td,
+.slide th {
+	padding: 5px 20px;
+	border-right: 1px solid #fff;
+}
+
 /* Lists */
 .slide ol,
 .slide ul {

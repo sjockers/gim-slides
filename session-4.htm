@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>GIM - Session 1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/gim/styles/style.css">
+	<!--
+		To apply styles to the certain slides
+		use slide ID to get needed elements
+		-->
+	<style>
+		#Goldener-Schnitt-1 h2 {
+			color:#FFF;
+		}
+		
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+		}
+		
+		li li {
+			font-size: 26px;
+		}
+		
+		a.source {
+			position: absolute;
+			z-index: 1000;
+			bottom: 0;
+			right: 15px;
+			color: white;
+			border: none;
+		}
+
+		header.captionized {
+			position: absolute;
+			z-index: 1000;
+			bottom: -1.5em;
+			height: 1em;
+			font-size: 1em;
+			text-align: center;
+		}
+		
+		header blockquote {
+			margin-top: 3em;
+			margin-left: 2em;
+		}
+		
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Grundlagen Interaktive Medien</h1>
+		<p>Sommersemester 2012</p>
+	</header>
+	
+	<div class="slide cover w" id="Cover"><div>
+		<section>
+			<img src="pictures/session-4/pencils.jpg" alt="">
+		</section>
+		<a href="http://de.wikipedia.org/w/index.php?title=Datei:Colouring_pencils.jpg" class="source">Foto: Michael Maggs</a>
+	</div></div>
+
+	<div class="slide" id="Index"><div>
+		<section>
+			<header>
+				<h2>Übersicht</h2>
+			</header>
+			<ul>
+				<li>Hintergrund</li> 
+				<li>Farbenlehre</li>
+			 	<li>Bildschirmdarstellung</li>
+				<li>Farbe &amp; CSS</li>	
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Hintergrund-1"><div>
+		<section>
+			<header>
+				<h2>Was ist Farbe?</h2>
+			</header>
+			<ul>
+				<li>
+					Licht: Sichtbare elektromagnetische Strahlung
+					<ul>
+						<li>Farbwahrnehmung: 380 nm und 780 nm</li>
+					</ul>
+				</li>
+				<li>
+					Wahrgenommen durch Rezeptoren auf der Netzhaut:
+					<ul>
+						<li>Stäbchen (Hell-/Dunkel-Kontrast)</li>
+						<li>Zapfen (Farbe)</li>
+					</ul>	
+				</li>
+				<li>Farbwahrnehmung ist subjektiv</li>
+			</ul>					
+		</section>
+	</div></div>
+
+	<div class="slide" id="Hintergrund-2"><div>
+		<section>
+			<header>
+				<h2>Farbe im elektromagnetischen Spektrum</h2>
+			</header>
+			
+			<table>
+			<tbody>
+			<tr align="center" bgcolor="red" style="color:white;">
+			<th style="text-align: left">Rot</th>
+			<td>~ 700–635&nbsp;nm</td>
+			<td>~ 430–480&nbsp;THz</td>
+			</tr>
+			<tr align="center" bgcolor="#FF8000" style="color:white;">
+			<th style="text-align: left">Orange</th>
+			<td>~ 635–590&nbsp;nm</td>
+			<td>~ 480–510&nbsp;THz</td>
+			</tr>
+			<tr align="center" bgcolor="#FFFF00" style="color:black;">
+			<th style="text-align: left">Gelb</th>
+			<td>~ 590–560&nbsp;nm</td>
+			<td>~ 510–540&nbsp;THz</td>
+			</tr>
+			<tr align="center" bgcolor="#00FF00" style="color:black;">
+			<th style="text-align: left">Grün</th>
+			<td>~ 560–490&nbsp;nm</td>
+			<td>~ 540–610&nbsp;THz</td>
+			</tr>
+			<tr align="center" bgcolor="#0000FF" style="color:white;">
+			<th style="text-align: left">Blau</th>
+			<td>~ 490–450&nbsp;nm</td>
+			<td>~ 610–670&nbsp;THz</td>
+			</tr>
+			<tr align="center" bgcolor="#8000FF" style="color:white;">
+			<th style="text-align: left">Violett</th>
+			<td>~ 450–400&nbsp;nm</td>
+			<td>~ 670–750&nbsp;THz</td>
+			</tr>
+			</tbody>
+			</table>
+							
+		</section>
+	</div></div>
+
+	<div class="slide" id="Hintergrund-3"><div>
+		<section>
+			<header>
+				<h2>Kulturelle Bedeutung</h2>
+			</header>
+			<ul>
+				<li>Assoziationen: z.B. Grün (Gras, Natur), Blau (Meer, Himmel)<li> 
+				<li>Symbolik: z.B. Grün (Hoffnung), Rot (Liebe), Weiß (Unschuld)</li>
+				<li>Abhängig vom Kontext!</li>			
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Gruen-1"><div>
+		<section>
+			<header>
+				<blockquote>
+					<p>Grün wie die Hoffnung.</p>
+				</blockquote>			
+			</header>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Gruen-2"><div>
+		<section>
+			<header>
+				<blockquote>
+					<p>Grün vor Neid.</p>
+				</blockquote>			
+			</header>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Rot-1"><div>
+		<section>
+			<header>
+				<blockquote>
+					<p>Rot wie die Liebe.</p>
+				</blockquote>			
+			</header>
+		</section>
+	</div></div>
+
+	<div class="slide cover" id="Rot-2"><div>
+		<section>
+			<img src="pictures/session-4/red.jpg" alt="">
+		</section>
+		<a href="http://www.flickr.com/photos/cplbasilisk/3231018904/" class="source">Foto: cplbasilisk</a>			
+	</div></div>
+
+	<div class="slide cover" id="Rot-3"><div>
+		<section>
+			<img src="pictures/session-4/red-2.jpg" alt="">
+		</section>
+		<a href="http://www.flickr.com/photos/rastafabi/506535876" class="source">Foto: Fabian Bromann</a>			
+	</div></div>
+
+	<div class="slide" id="Farbkreis"><div>
+		<section>
+			<header>
+				<h2>Der Farbkreis nach Itten</h2>
+			</header>
+			<div style="float:left; padding-right: 80px; position: relative">
+			<img src="pictures/session-4/farbkreis.svg" alt="">
+			<a href="http://de.wikipedia.org/wiki/Farbkreis#Der_Zw.C3.B6lfteilige_Farbkreis_nach_Itten" class="source" style="color: #000; font-size: 0.5em; right: 10px; bottom: -10px" >Abbildung: Wikipedia</a>
+			</div>
+			<ul>
+			 	<li>
+					nach Johannes Itten (1888-1967)
+					<br>Maler und Bauhaus-Lehrer
+				</li>
+				<li>12 "leicht vorstellbare" Farben:</li>
+			</ul>
+			<ol>
+				<li>Primärfarben</li>
+				<li>Sekundärfarben</li>
+				<li>Tertiärfarben</li>
+			</ol>
+			
+		</section>
+	</div></div>
+
+	<div class="slide cover" id="Farbkreis-2"><div>
+		<section>
+			<header>
+				<h2>Einordnung im Farbkreis</h2>
+			</header>
+			<img src="pictures/session-4/farbkreis-2.png" alt="">
+		</section>
+	</div></div>
+		
+	<div class="slide cover" id="Farbkreis-3"><div>
+		<section>
+			<header>
+				<h2>Komplementärfarben</h2>
+			</header>
+			<img src="pictures/session-4/komplementaerfarben.png" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide cover" id="farbmischung"><div>
+		<section>
+			<header>
+				<h2>Subtraktive und additive Farbmischung</h2>
+			</header>
+			<img src="pictures/session-4/farbmischung.png" alt="">
+		</section>
+	</div></div>
+
+	<div class="slide" id="Pixel-1"><div>
+		<section>
+			<header>
+				<h2>Bildschirmdarstellung</h2>
+			</header>
+			<ul>
+				<li>
+					Pixel: <i>"Picture Element"</i>
+					<ul>
+						<li>"atomare Einheit" der Bildschirmdarstellung </li> 
+						<li>ein Pixel besteht aus drei Komponenten (<em>Subpixel</em>): Rot, Grün, Blau</li>
+					</ul>
+				</li>
+				<li>additive Farbmischung!</li>			
+			</ul>
+		</section>
+	</div></div>
+			
+	<div class="slide cover h" id="Pixel-2"><div>		
+		<section>
+			<img src="pictures/session-4/subpixel.jpg" alt="">
+		</section>
+		<a href="http://de.wikipedia.org/w/index.php?title=Datei:Lcd.jpg" class="source">Abbildung: Wikipedia </a>
+	</div></div>
+
+	<div class="slide cover" id="Color-Panel"><div>
+		<section>
+			<img src="pictures/session-4/colorpanel.png" alt="Colorpanel">
+		</section>
+	</div></div>
+	
+	<div class="slide" id="RGB"><div>
+		<section>
+			<header>
+				<h2>Das RGB-Farbsystem</h2>
+			</header>
+				<ul>
+					<li>drei Komponenten: Rot, Grün, Blau</li>
+					<li>analog zur tatsächlichen Farberzeugung auf dem Bildschirm</li>
+					<li>
+						Beispiel: Reines Rot 
+						<ul>
+							<li>Dezimale Darstellung: <code>255, 0, 0</code></li>
+							<li>Hexadezimale Darstellung: <code>#FF0000</code></li> 
+						</ul>						
+					</li>
+				</ul>
+		</section>			
+	</div></div>
+	
+	<div class="slide" id="HSB"><div>
+		<section>
+			<header>
+				<h2>Das HSL-Farbsystem</h2>
+			</header>
+				<ul>
+					<li>
+						Beschreibung von Farbe über drei Komponenten:
+						<ol>
+							<li>Hue (Farbton)</li>
+							<li>Saturation (Sättigung)</li>
+							<li>Lightness (Helligkeit)</li>
+						</ol>
+					</li>
+					<li>ähnelt der menschlichen Farbwahrnehmung</li>
+					<li>intuitiver verwendbar als RGB</li>					
+					<li>
+						Beispiel: Reines Rot <code>0, 100%, 50%</code>					
+					</li>
+				</ul>
+		</section>			
+	</div></div>
+	
+	<div class="slide" id="Grafikformate-1"><div>
+		<section>
+			<header>
+				<h2>Exkurs: Gängige Grafikformate im Web</h2>
+			</header>
+			<strong>Unterscheidungsmerkmale für Grafikformate:</strong>
+				<ul>
+					<li>Dateigröße</li>
+					<li>Kompressionsverfahren</li>					
+					<li>Farbtiefe (Anzahl der darstellbaren Farben)</li>
+					<li>Alphakanal (Transparenz)</li>
+				</ul>
+		</section>			
+	</div></div>
+
+	
+	<div class="slide" id="Grafikformate-2"><div>
+		<section>
+			<header>
+				<h2>Grafiken mit hoher Farbtiefe (z.B. Fotos)</h2>
+			</header>
+			<ul>
+				<li>in der Regel 3 Farbkanäle (RGB) mit je 8 bit</li>
+				<li>
+					<strong>JPEG</strong> 
+					<ul>
+						<li>verlustbehaftete Kompression</li>
+						<li>kein Alphakanal</li>
+					</ul>
+				</li>
+				<li>
+					<strong>PNG</strong> (<em>"PNG 24"</em>) 
+					<ul>
+						<li>verlustfreie Kompression</li>
+						<li>optionaler Alphakanal (in der Regel 8 bit)</li>
+					</ul>
+				</li>							
+			</ul>
+		</section>			
+	</div></div>
+
+	
+	<div class="slide" id="Grafikformate-3"><div>
+		<section>
+			<header>
+				<h2>Grafiken mit geringer Farbtiefe (z.B. Symbole)</h2>
+			</header>
+			<ul>
+				<li>bis zu 256 Farben (in der Regel <em>selektiv</em>)</li>
+				<li>verlustfreie Kompression (aber oft Reduktion der Farbtiefe)</li>				
+				<li>
+					<strong>GIF</strong> 
+					<ul>
+						<li>1 bit Alpha</li>
+						<li>oft für Animation verwendet <a href="http://nyan.cat/">(Beispiel)</a></li>						
+					</ul>
+				</li>
+				<li>
+					<strong>PNG</strong> (<em>"PNG 8"</em>) 
+					<ul>
+						<li>Alpha > 1 bit möglich</li>
+					</ul>
+				</li>							
+			</ul>
+		</section>			
+	</div></div>
+	
+
+	<div class="slide" id="CSS-Farbe-1"><div>
+		<section>
+			<header>
+				<h2>Farbe &amp; CSS</h2>
+			</header>			
+			<strong>Anwendungsmöglichkeiten:</strong> 
+				<ul>
+					<li>Hintergrundfarbe: <code>background-color</code></li>
+					<li>Schriftfarbe: <code>color</code></li>
+					<li>Rahmenfarbe: <code>border-color</code></li>
+				</ul>
+		</section>			
+	</div></div>
+
+	<div class="slide" id="CSS-Farbe-2"><div>
+		<section>
+			<header>
+				<h2>Farbangaben in CSS</h2>
+			</header>
+				<ul>
+					<li>Farbnamen, z.B. <code>red</code></li>
+					<li>Numerische Angaben (hexadezimal), z.B. <code>#FF0000</code></li>
+					<li>Numerische Angaben (dezimal), z.B. <code>rgb(255, 0, 0)</code></li>
+					<li>Numerische Angaben (prozentual), z.B. <code>rgb(100%, 0, 0)</code></li>
+				</ul>
+				<p>Nachlesen, z.B. hier: <a href="https://developer.mozilla.org/en/CSS/color_value">https://developer.mozilla.org/en/CSS/color_value</a></p>
+		</section>			
+	</div></div>	
+
+	<div class="slide" id="CSS-Farbe-3"><div>
+		<section>
+			<header>
+				<h2>Farbangaben in CSS (advanced)</h2>
+			</header>
+				<ul>
+					<li>HSL, z.B. <code>hsl(0, 100%, 50%)</code></li>
+					<li>HSLA (inklusive Transparenz), z.B. <code>hsla(0, 100%, 50%, 0.7)</code></li>
+					<li>RGBA (dezimal, inklusive Transparenz), z.B. <code>rgb(255, 0, 0, 0.7)</code></li>
+				</ul>
+				<p>Nachlesen, z.B. hier: <a href="https://developer.mozilla.org/en/CSS/color_value">https://developer.mozilla.org/en/CSS/color_value</a></p>
+		</section>			
+	</div></div>
+
+	<div class="slide" id="ThankYou"><div>
+		<section>
+			<header>
+				<h2>Fragen?</h2>
+			</header>
+			<p>Simon Jockers<br/>
+				<a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+		</section>
+	</div></div>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
