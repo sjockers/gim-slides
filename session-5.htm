@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>GIM - Session 5</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/gim/styles/style.css">
+	<!--
+		To apply styles to the certain slides
+		use slide ID to get needed elements
+		-->
+	<style>
+		#Goldener-Schnitt-1 h2 {
+			color:#FFF;
+		}
+		
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+		}
+		
+		li li {
+			font-size: 26px;
+		}
+		
+		a.source {
+			position: absolute;
+			z-index: 1000;
+			bottom: 0;
+			right: 15px;
+			color: white;
+			border: none;
+		}
+
+		header.captionized {
+			position: absolute;
+			z-index: 1000;
+			bottom: -1.5em;
+			height: 1em;
+			font-size: 1em;
+			text-align: center;
+		}
+		
+		header blockquote {
+			margin-top: 3em;
+			margin-left: 2em;
+		}
+		
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Grundlagen Interaktive Medien</h1>
+		<p>Sommersemester 2012</p>
+	</header>
+	
+	<div class="slide cover h" id="Cover"><div>
+		<section>
+			<img src="pictures/session-5/js.png" alt="">
+		</section>
+	</div></div>
+
+	<div class="slide" id="Index"><div>
+		<section>
+			<header>
+				<h2>Übersicht</h2>
+			</header>
+			<ul>
+				<li>Was ist JavaScript?</li> 
+				<li>Einbinden von JavaScript</li>
+			 	<li>Das DOM (Document Object Model)</li>
+				<li>Event-Handling</li>	
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Hintergrund"><div>
+		<section>
+			<header>
+				<h2>Was ist JavaScript?</h2>
+			</header>
+			<ul>
+				<li><em>nicht</em> Java!</li>
+				<li>nur syntaktisch an Java angelehnt</li>				
+				<li>
+					Dynamische Skriptsprache
+					<ul>
+						<li>Sourcecode wird zur Laufzeit interpretiert</li>
+					</ul>
+				</li>
+				<li>
+					Objektbasierte Sprache
+					<ul>
+						<li>Es gibt Objekte, aber keine Klassen</li>
+					</ul>
+				</li>
+			</ul>					
+		</section>
+	</div></div>
+
+	<div class="slide" id="Typisierung-1"><div>
+		<section>
+			<header>
+				<h2>Dynamische Typisierung</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code"> var i = <mark>1</mark>;</code>
+				<code class="lots-of-code"> i = <mark>"ein String"</mark>;</code>
+				<code class="lots-of-code"> i = <mark>true</mark>;</code>	
+			</pre>
+			<ul>
+				<li>Die Typisierung erfolgt zur Laufzeit.</li>
+				<li>Der Typ einer Variablen kann sich bei der Wertzuweisung ändern.</li>
+				<li>Der Typ einer Variablen ergibt sich aus ihrem Wert.</li>
+			</ul>					
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="Typisierung-2"><div>
+		<section>
+			<header>
+				<h2>Typen</h2>
+			</header>
+			<ul>
+				<li>
+					Wenige primitive Typen:
+					<ul>
+						<li><code>Number</code> (keine Unterscheidung zwischen Float und Integer)</li>
+						<li><code>String</code></li>
+						<li><code>Boolean</code></li>
+					</ul>
+				</li>
+				<li>Besondere Typen: <code>Array</code>, <code>Function</code> und <code>Object</code></li>
+				<li>Besondere Werte: <code>null</code> und <code>undefined</code></li>
+			</ul>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Arrays"><div>
+		<section>
+			<header>
+				<h2>Array</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">var emptyArray = <mark>new Array(5)</mark>;</code>
+				<code class="lots-of-code">var anotherEmptyArray = <mark>[]</mark>;</code>
+				<code class="lots-of-code">var homogenousArray = <mark>[1, 2, 3]</mark>;</code>
+				<code class="lots-of-code">var heterogenousArray = <mark>["one", 1, 2.0, false]</mark>;</code>
+			</pre>	
+			<ul>
+				<li>Ein Array kann Objekte verschiedenen Typs enthalten.</li>
+				<li>Die Länge eines Arrays ist dynamisch.</li>
+			</ul>			
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Objects"><div>
+		<section>
+			<header>
+				<h2>Object</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">var emptyMap = <mark>{}</mark>;	</code>			
+				<code class="lots-of-code">var homogenousMap = <mark>{one: 1, two: 2, three: 3};</mark></code>
+				<code class="lots-of-code">var heterogenousMap = <mark>{one: 1, two: "two", three: 3.0};</mark></code>
+			</pre>
+			<ul>
+				<li>Property Map – enthält <em>Key-Value-Pairs</em></li>
+				<li>Zugriff über: <code>homogeneousMap.one<code></li>
+				<li>Oder: <code>homogeneousMap["one"]<code></li>					
+			</ul>			
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Functions-1"><div>
+		<section>
+			<header>
+				<h2>Function</h2>
+			</header>
+			<ul>
+				<li>
+					Funktionen sind Objekte: <em>"First-Class Objects"</em>
+					<ul>
+						<li>Eine Funktion kann einer Variablen zugewiesen werden.</li>
+						<li>Eine Funktion kann als Parameter übergeben werden.</li>
+						<li>Eine Funktion kann den Rückgabewert einer Funktion bilden.</li>				
+					</ul>	
+				</li>
+				<li>Funktionen können als Konstruktor für neue Objekte dienen 
+					<br/>(durch Verwendung des <code>new</code>-Operators)</li>
+			</ul>					
+		</section>
+	</div></div>
+
+	<div class="slide" id="Functions-2"><div>
+		<section>
+			<header>
+				<h2>Eine einfache Funktion</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">function add(a, b) { </code>
+				<code class="lots-of-code">  return a + b; </code>
+				<code class="lots-of-code">} </code>
+				<code class="lots-of-code"> </code>
+				<code class="lots-of-code">var c = add(2, 2); </code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Functions-3"><div>
+		<section>
+			<header>
+				<h2>Eine Konstruktorfunktion</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">function Car(color) { </code>
+				<code class="lots-of-code">	this.color = color;</code>
+				<code class="lots-of-code">	this.drive = function() { </code>
+				<code class="lots-of-code">		alert("Wroomm wroom"); </code>
+				<code class="lots-of-code">	}; </code>
+				<code class="lots-of-code">};  </code>
+				<code class="lots-of-code"> </code>
+			</pre>
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="Functions-4"><div>
+		<section>
+			<header>
+				<h2>Verwendung einer Konstruktorfunktion</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">var herbie = <mark>new</mark> Car("white"); </code>
+				<code class="lots-of-code"> </code>
+				<code class="lots-of-code">alert(herbie.color); </code>
+				<code class="lots-of-code">herbie.drive(); </code>
+			</pre>
+		</section>
+	</div></div>
+			
+	<div class="slide" id="Anwendung"><div>
+		<section>
+			<header>
+				<h2>Anwendungsgebiete</h2>
+			</header>
+			<ul>
+				<li>Am weitesten verbreitet: Webentwicklung (im Browser)</li>
+				<li>
+					Andere Anwendungsgebiete:
+					<ul>
+						<li>Webentwicklung (Verwendung auf dem Server, z.B. mit <em>node.js</em>)
+						<li>Scripting in Anwendungssoftware (z.B. in <em>Adobe Photoshop</em>)</li>
+						<li>Entwicklung von Anwendungssoftware <br/>(z.B. Erweiterungen/Plugins für <em>Chrome</em> und <em>Firefox</em>)</li>
+					</ul>
+				</li>
+				
+			</ul>					
+		</section>
+	</div></div>
+					
+	<div class="slide" id="Einbindung-1"><div>
+		<section>
+			<strong>JavaScript: Eingebettet in HTML</strong>
+			<pre>
+				<code class="lots-of-code"> &lt;!doctype html&gt;</code>
+				<code class="lots-of-code">  &lt;html&gt; </code>
+				<code class="lots-of-code">    &lt;head&gt; </code>
+				<code class="lots-of-code">      &lt;title&gt;Das ist der Titel der Seite &lt;/title&gt; </code>
+				<code class="lots-of-code">      <mark>&lt;script&gt; </mark></code>
+				<code class="lots-of-code">       // JavaScript code goes here... </code>
+				<code class="lots-of-code">      <mark>&lt;/script&gt; </mark></code>
+				<code class="lots-of-code">    &lt;/head&gt; </code>
+				<code class="lots-of-code">    (...) </code>
+			</pre>							
+		</section>
+	</div></div>
+
+	<div class="slide" id="Einbindung-2"><div>
+		<section>
+			<strong>Externes Script: Viel Besser!</strong>
+			<pre>
+				<code class="lots-of-code"> &lt;!doctype html&gt;</code>
+				<code class="lots-of-code">  &lt;html&gt; </code>
+				<code class="lots-of-code">    &lt;head&gt; </code>
+				<code class="lots-of-code">      &lt;title&gt;Das ist der Titel der Seite &lt;/title&gt; </code>
+				<code class="lots-of-code">      <mark>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; </mark></code>
+				<code class="lots-of-code">    &lt;/head&gt; </code>
+				<code class="lots-of-code">    (...) </code>
+			</pre>							
+		</section>
+	</div></div>
+
+	<div class="slide" id="Window"><div>
+		<section>
+			<header>
+				<h2>Das Window-Objekt</h2>
+			</header>					
+				<ul>
+					<li><code>window</code></li>
+					<li>Repräsentiert das Browserfenster (oder den Tab)</li>
+					<li>Oberstes Objekt für das Scripting im Browser</li>
+				</ul>
+				<p>
+					<a href="https://developer.mozilla.org/en/DOM/window">https://developer.mozilla.org/en/DOM/window</a>
+				</p>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Document-1"><div>
+		<section>
+			<header>
+				<h2>Das Document Object Model (DOM)</h2>
+			</header>		
+				<ul>
+					<li><code>window.document</code> oder einfach nur <code>document</code></li>
+					<li>Repräsentiert das HTML-Dokument</li>
+					<li>Ermöglicht die Manipulation von HTML-Inhalten</li>
+				</ul>
+				<a href="https://developer.mozilla.org/en/DOM/document">https://developer.mozilla.org/en/DOM/document</a>
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="Document-2"><div>
+		<section>	
+			<img src="pictures/session-5/dom.png" width="1155" height="724" alt="">			
+		</section>
+	</div></div>						
+
+	<div class="slide" id="Document-3"><div>
+		<section>
+			<header>
+				<h2>DOM-Manipulation mit JavaScript (Beispiele)</h2>
+			</header>		
+			<pre>
+				<code class="lots-of-code"> document.<mark>createElement</mark>("p"); </code>
+				<code class="lots-of-code"> document.<mark>createTextNode</mark>("Hello World!"); </code>
+				<code class="lots-of-code"> document.<mark>getElementById</mark>("footer"); </code>
+				<code class="lots-of-code"> document.<mark>getElementsByTagName</mark>("h1"); </code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Document-4"><div>
+		<section>
+			<header>
+				<h2>Hello World!</h2>
+			</header>		
+			<pre>	
+				<code class="lots-of-code">window.onload = function() {</code>
+				<code class="lots-of-code">  var para = document.createElement("p");</code>
+				<code class="lots-of-code">  var body = document.getElementsByTagName("body")[0];</code>
+				<code class="lots-of-code">  body.appendChild(para);</code>
+				<code class="lots-of-code">  var text = document.createTextNode("Hello World!");</code>
+				<code class="lots-of-code">  para.appendChild(text);</code>
+				<code class="lots-of-code">}</code>
+			</pre>
+		</section>
+	</div></div>
+			
+	<div class="slide" id="Document-5"><div>
+		<section>
+			<header>
+				<h2>Auch nützlich:</h2>
+			</header>		
+			<pre>
+				<code class="lots-of-code"> element.<mark>setAttribute</mark>("id", "eine-ID"); </code>
+				<code class="lots-of-code"> element.<mark>setAttribute</mark>("src", "datei.jpg"); </code>
+				<code class="lots-of-code"> element.<mark>innerHTML</mark> = "&lt;p&gt;Hallo Welt&lt;/p&gt;"; </code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="ThankYou"><div>
+		<section>
+			<header>
+				<h2>Fragen?</h2>
+			</header>
+			<p>Simon Jockers<br/>
+				<a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+		</section>
+	</div></div>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
