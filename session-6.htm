@@ -1,0 +1,662 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>GIM - Session 5</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/gim/styles/style.css">
+	<!--
+		To apply styles to the certain slides
+		use slide ID to get needed elements
+		-->
+	<style>
+		#Goldener-Schnitt-1 h2 {
+			color:#FFF;
+		}
+		
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+		}
+		
+		li li {
+			font-size: 26px;
+		}
+		
+		a.source {
+			position: absolute;
+			z-index: 1000;
+			bottom: 0;
+			right: 15px;
+			color: white;
+			border: none;
+		}
+
+		header.captionized {
+			position: absolute;
+			z-index: 1000;
+			bottom: -1.5em;
+			height: 1em;
+			font-size: 1em;
+			text-align: center;
+		}
+		
+		header blockquote {
+			margin-top: 3em;
+			margin-left: 2em;
+		}
+		
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Grundlagen Interaktive Medien</h1>
+		<p>Sommersemester 2012</p>
+	</header>
+	
+	<div class="slide cover h" id="Cover"><div>
+		<section>
+			<img src="pictures/session-5/js.png" alt="">
+		</section>
+	</div></div>
+
+	<div class="slide" id="Index"><div>
+		<section>
+			<header>
+				<h2>Übersicht</h2>
+			</header>
+			<ul>
+				<li>JavaScript Grundlagen (Wiederholung)</li> 
+			 	<li>Das DOM (Wiederholung)</li>
+			 	<li>Event-Handling in JavaScript</li>
+			 	<li>Dynamische Webseiten mit AJAX, XML und JSON</li>			
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Hintergrund"><div>
+		<section>
+			<header>
+				<h2>Was ist JavaScript?</h2>
+			</header>
+			<ul>
+				<li><em>nicht</em> Java!</li>
+				<li>nur syntaktisch an Java angelehnt</li>				
+				<li>
+					Dynamische Skriptsprache
+					<ul>
+						<li>Sourcecode wird zur Laufzeit interpretiert</li>
+					</ul>
+				</li>
+				<li>
+					Objektbasierte Sprache
+					<ul>
+						<li>Es gibt Objekte, aber keine Klassen</li>
+					</ul>
+				</li>
+			</ul>					
+		</section>
+	</div></div>
+
+	<div class="slide" id="Typisierung-1"><div>
+		<section>
+			<header>
+				<h2>Dynamische Typisierung</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code"> var i = <mark>1</mark>;</code>
+				<code class="lots-of-code"> i = <mark>"ein String"</mark>;</code>
+				<code class="lots-of-code"> i = <mark>true</mark>;</code>	
+			</pre>
+			<ul>
+				<li>Die Typisierung erfolgt zur Laufzeit.</li>
+				<li>Der Typ einer Variablen kann sich bei der Wertzuweisung ändern.</li>
+				<li>Der Typ einer Variablen ergibt sich aus ihrem Wert.</li>
+			</ul>					
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="Typisierung-2"><div>
+		<section>
+			<header>
+				<h2>Typen (Beispiele)</h2>
+			</header>
+			<ul>
+				<li>
+					Wenige primitive Typen:
+					<ul>
+						<li><code>Number</code> (keine Unterscheidung zwischen Float und Integer)</li>
+						<li><code>String</code></li>
+						<li><code>Boolean</code></li>
+					</ul>
+				</li>
+				<li>Besondere Typen: <code>Array</code>, <code>Object</code> und <code>Function</code></li>
+				<li>Besondere Werte: <code>null</code> und <code>undefined</code></li>
+			</ul>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Arrays"><div>
+		<section>
+			<header>
+				<h2>Array</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">var emptyArray = <mark>[]</mark>;</code>
+				<code class="lots-of-code">var homogenousArray = <mark>[1, 2, 3]</mark>;</code>
+				<code class="lots-of-code">var heterogenousArray = <mark>["one", 1, 2.0, false]</mark>;</code>
+			</pre>	
+			<ul>
+				<li>Ein Array kann Objekte verschiedenen Typs enthalten.</li>
+				<li>Die Länge eines Arrays ist dynamisch.</li>
+				<li>Zugriff über: <code>homogeneousMap[0]<code></li>				
+			</ul>			
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Objects"><div>
+		<section>
+			<header>
+				<h2>Object</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">var emptyMap = <mark>{}</mark>;	</code>			
+				<code class="lots-of-code">var homogenousMap = <mark>{one: 1, two: 2, three: 3};</mark></code>
+				<code class="lots-of-code">var heterogenousMap = <mark>{one: 1, two: "two", three: 3.0};</mark></code>
+			</pre>
+			<ul>
+				<li>Property Map – enthält <em>Key-Value-Pairs</em></li>
+				<li>Zugriff über: <code>homogeneousMap.one<code></li>
+				<li>Oder: <code>homogeneousMap["one"]<code></li>					
+			</ul>			
+		</section>
+	</div></div>
+	
+	<div class="slide" id="Functions-1"><div>
+		<section>
+			<header>
+				<h2>Function</h2>
+			</header>
+			<ul>
+				<li>
+					Funktionen sind Objekte: <em>"First-Class Objects"</em>
+					<ul>
+						<li>Eine Funktion kann einer Variablen zugewiesen werden.</li>
+						<li>Eine Funktion kann als Parameter übergeben werden.</li>
+						<li>Eine Funktion kann den Rückgabewert einer Funktion bilden.</li>				
+					</ul>	
+				</li>
+				<li>Funktionen können als Konstruktor für neue Objekte dienen 
+					<br/>(durch Verwendung des <code>new</code>-Operators)</li>
+			</ul>					
+		</section>
+	</div></div>
+
+	<div class="slide" id="Functions-2"><div>
+		<section>
+			<header>
+				<h2>Eine einfache Funktion</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">function add(a, b) { </code>
+				<code class="lots-of-code">  return a + b; </code>
+				<code class="lots-of-code">} </code>
+				<code class="lots-of-code"> </code>
+				<code class="lots-of-code">var c = add(2, 2); </code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Functions-3"><div>
+		<section>
+			<header>
+				<h2>Eine Konstruktorfunktion</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">function Car(color) { </code>
+				<code class="lots-of-code">	this.color = color;</code>
+				<code class="lots-of-code">	this.drive = function() { </code>
+				<code class="lots-of-code">		alert("Wroomm wroom"); </code>
+				<code class="lots-of-code">	}; </code>
+				<code class="lots-of-code">};  </code>
+				<code class="lots-of-code"> </code>
+			</pre>
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="Functions-4"><div>
+		<section>
+			<header>
+				<h2>Verwendung einer Konstruktorfunktion</h2>
+			</header>
+			<pre>
+				<code class="lots-of-code">var herbie = <mark>new</mark> Car("white"); </code>
+				<code class="lots-of-code"> </code>
+				<code class="lots-of-code">alert(herbie.color); </code>
+				<code class="lots-of-code">herbie.drive(); </code>
+			</pre>
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="Einbindung"><div>
+		<section>
+			<strong>Einbindung von JavaScript-Dateien</strong>
+			<pre>
+				<code class="lots-of-code"> &lt;!doctype html&gt;</code>
+				<code class="lots-of-code">  &lt;html&gt; </code>
+				<code class="lots-of-code">    &lt;head&gt; </code>
+				<code class="lots-of-code">      &lt;title&gt;Das ist der Titel der Seite &lt;/title&gt; </code>
+				<code class="lots-of-code">      <mark>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; </mark></code>
+				<code class="lots-of-code">    &lt;/head&gt; </code>
+				<code class="lots-of-code">    (...) </code>
+			</pre>							
+		</section>
+	</div></div>
+
+	<div class="slide" id="Document-1"><div>
+		<section>
+			<header>
+				<h2>Das Document Object Model (DOM)</h2>
+			</header>		
+				<ul>
+					<li><code>window.document</code> oder einfach nur <code>document</code></li>
+					<li>Repräsentiert das HTML-Dokument</li>
+					<li>Ermöglicht die Manipulation von HTML-Inhalten</li>
+				</ul>
+				<a href="https://developer.mozilla.org/en/DOM/document">https://developer.mozilla.org/en/DOM/document</a>
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="Document-2"><div>
+		<section>	
+			<img src="pictures/session-5/dom.png" width="1155" height="724" alt="">			
+		</section>
+	</div></div>						
+
+	<div class="slide" id="Document-3"><div>
+		<section>
+			<header>
+				<h2>DOM-Manipulation mit JavaScript (Beispiele)</h2>
+			</header>		
+			<pre>
+				<code class="lots-of-code"> document.<mark>createElement</mark>("p"); </code>
+				<code class="lots-of-code"> document.<mark>createTextNode</mark>("Hello World!"); </code>
+				<code class="lots-of-code"> document.<mark>getElementById</mark>("footer"); </code>
+				<code class="lots-of-code"> document.<mark>getElementsByTagName</mark>("h1"); </code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Document-4"><div>
+		<section>
+			<header>
+				<h2>Hello World!</h2>
+			</header>		
+			<pre>	
+				<code class="lots-of-code">window.onload = function() {</code>
+				<code class="lots-of-code">  var para = document.createElement("p");</code>
+				<code class="lots-of-code">  var body = document.getElementsByTagName("body")[0];</code>
+				<code class="lots-of-code">  body.appendChild(para);</code>
+				<code class="lots-of-code">  var text = document.createTextNode("Hello World!");</code>
+				<code class="lots-of-code">  para.appendChild(text);</code>
+				<code class="lots-of-code">}</code>
+			</pre>
+		</section>
+	</div></div>
+			
+	<div class="slide" id="Document-5"><div>
+		<section>
+			<header>
+				<h2>Auch nützlich:</h2>
+			</header>		
+			<pre>
+				<code class="lots-of-code"> element.<mark>setAttribute</mark>("id", "eine-ID"); </code>
+				<code class="lots-of-code"> element.<mark>setAttribute</mark>("src", "datei.jpg"); </code>
+				<code class="lots-of-code"> element.<mark>innerHTML</mark> = "&lt;p&gt;Hallo Welt&lt;/p&gt;"; </code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Events-1"><div>
+		<section>
+			<header>
+				<h2>Event Handling</h2>
+			</header>
+
+			<ul>
+				<li>Reaktion auf Ereignisse: Event Handling</li>
+				<li>
+					JavaScript wird oft asynchron ausgeführt:
+					<ul>
+						<li>Code der auf Nutzereingaben reagiert.</li>
+						<li>Code der erst ausgeführt wird, wenn Inhalte geladen sind.</li>	
+					</ul>					
+				</li>
+				<li>Vorteil: <em>Responsiveness</em> – Die Oberfläche wird nicht "blockiert".</li>
+				<li>Nachteil: Die Übersichtlichkeit des Codes kann leiden.</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Events-2"><div>
+		<section>	
+			<strong>HTML</strong>
+			<pre>
+			<code class="lots-of-code">&lt;button id=<mark>&quot;hallo&quot;</mark>&gt;Sag Hallo!&lt;/button&gt;</code>
+			</pre>
+
+			<strong>JavaScript</strong>					
+			<pre>
+				<code class="lots-of-code">var <mark>meinElement</mark> = document.getElementById(<mark>"hallo"</mark>);</code>
+				<code class="lots-of-code"><mark>meinElement</mark>.onclick = function() {</code>
+				<code class="lots-of-code">	window.alert("Hallo Welt!");</code>
+				<code class="lots-of-code">}</code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Events-3"><div>
+		<section>	
+			<header>
+				<h2>Reaktion auf Nutzereingaben (Beispiele)</h2>
+			</header>
+			<pre>
+			<code>element.<mark>onmouseover</mark> = function() {...}</code>
+			<code>element.<mark>onmouseout</mark> = function() {...}</code>
+			<code>element.<mark>onchange</mark> = function() {...}</code>
+			</pre>
+
+			<a href="https://developer.mozilla.org/en/DOM/element#section_3"> 		
+				https://developer.mozilla.org/en/DOM/element#section_3
+			</a>
+		</section>
+	</div></div>
+
+	<div class="slide cover h" id="Cover"><div>
+		<section>
+			<img src="pictures/session-6/ajax.jpg" alt="">
+		</section>
+	</div></div>
+
+	<div class="slide" id="XML-1"><div>
+		<section>	
+			<header>
+				<h2>Exkurs: XML</h2>
+			</header>
+
+			<ul>
+				<li><em>Extensible Markup Language</em></li>
+				<li>Beschreibungssprache für Dokumente</li>
+				<li>Format für den Austausch von Daten zwischen Computersystemen</li>
+				<li>XML kann die Basis für konkrete Formate bilden, z.B. XHTML, SVG, DOCX</li>
+				<li>
+					XML-Dateien sind Textdokumente: 
+					<ul>
+						<li>maschinen- und menschenlesbar</li>
+						<li>können mit einem beliebigen Texteditor bearbeitet werden</li>						
+					</ul>
+				</li>
+			</ul>
+
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="XML-2"><div>
+		<section>	
+			<pre>
+				<code class="lots-of-code"><mark>&lt;album&gt;</mark></code>
+				<code class="lots-of-code">	<mark>&lt;titel&gt;</mark>Nevermind<mark>&lt;/titel&gt;</mark></code>
+				<code class="lots-of-code">	<mark>&lt;year&gt;</mark>1991<mark>&lt;/year&gt;</mark></code>
+				<code class="lots-of-code">	<mark>&lt;band&gt;</mark>Nirvana<mark>&lt;/band&gt;</mark></code>
+				<code class="lots-of-code">	<mark>&lt;artists&gt;</mark></code>
+				<code class="lots-of-code">		<mark>&lt;artist&gt;</mark>Kurt Cobain<mark>&lt;/artist&gt;</mark></code>
+				<code class="lots-of-code">		<mark>&lt;artist&gt;</mark>Krist Novoseli&#x107;<mark>&lt;/artist&gt;</mark></code>
+				<code class="lots-of-code">		<mark>&lt;artist&gt;</mark>Dave Grohl<mark>&lt;/artist&gt;</mark></code>
+				<code class="lots-of-code">	<mark>&lt;/artists&gt;</mark></code>								
+				<code class="lots-of-code"><mark>&lt;/album&gt;</mark></code>
+			<pre>
+				
+		</section>
+	</div></div>
+
+	<div class="slide" id="XML-3"><div>
+		<section>	
+			<header>
+				<h2>XML: Formelle Regeln (Wichtigste Beispiele)</h2>
+			</header>
+
+			<ul>
+				<li>Ein XML-Dokument beginnt mit einem einzelnen Root-Element</li>
+				<li>Elemente müssen geöffnet und geschlossen werden</li>
+				<li>Elemente dürfen sich nicht überlappen</li>
+				<li>Leere Tags (<em>"Empty-Element-Tags"</em>) enden mit <code>/></code> (z.B. <code>&lt;br/&gt;</code>)</li>
+				<li>Attribut-Werte stehen in Anführungszeichen</li>
+			</ul>	
+				
+		</section>
+	</div></div>
+
+	<div class="slide" id="XML-4"><div>
+		<section>	
+			<header>
+				<h2>XML: Tags und Attribute</h2>
+			</header>
+
+			<ul>
+				<li>Elemente enthalten <em>Daten</em></li>
+				<li>Attribute enthalten <em>Metadaten</em></li>				
+				<li>
+					Dauemenregel: <em>"Sieht der Nutzer die Information?"</em> 
+					<ul>
+						<li>ja &rarr; Element verwenden</li>
+						<li>nein &rarr; Attribut verwenden</li>
+					</ul>
+				</li>
+				<li>Beispiel (das <code>a</code>-Tag in XHTML):<br/><code>&lt;a href=&quot;http://google.com/&quot;&gt;Google&lt;/a&gt;</code></li>
+			</ul>
+
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="JSON"><div>
+		<section>	
+			<header>
+				<h2>Alternative zu XML: JSON</h2>
+			</header>
+
+			<ul>
+				<li><em>JavaScript Object Notation</em></li>
+				<li>Wie XML, ein Format für den Austausch von Daten zwischen Computern</li>
+				<li>
+					Auch JSON-Dateien sind Textdokumente: 
+					<ul>
+						<li>maschinen- und menschenlesbar</li>
+						<li>können mit einem beliebigen Texteditor bearbeitet werden</li>
+						<li>aber: Ein JSON-Dokument ist ausführbarer JavaScript-Code!</li>												
+					</ul>
+				</li>
+			</ul>
+
+		</section>
+	</div></div>
+	
+	
+	<div class="slide" id="JSON-2"><div>
+		<section>	
+			<pre>                        
+				<code class="lots-of-code">{ </code>
+				<code class="lots-of-code">	<mark>titel</mark>: "Nevermind", </code>
+				<code class="lots-of-code">	<mark>year</mark>: 1991, </code>
+				<code class="lots-of-code">	<mark>band</mark>: "Nirvana", </code>
+				<code class="lots-of-code">	<mark>artists</mark>: [ </code>
+				<code class="lots-of-code">		"Kurt Cobain", </code>
+				<code class="lots-of-code">		"Krist Novoseli&#x107;", </code>
+				<code class="lots-of-code">		"Dave Grohl" </code>
+				<code class="lots-of-code">	] </code>
+				<code class="lots-of-code">} </code>
+			<pre>
+				
+		</section>
+	</div></div>
+	
+	
+	<div class="slide" id="JSON-3"><div>
+		<section>	
+			<header>
+				<h2>JSON: Vorteile gegenüber XML</h2>
+			</header>
+
+			<ul>
+				<li>ausführbarer Code – kann einfacher mit JavaScript verarbeitet werden</li>
+				<li>weniger "Overhead" – weniger redundante Zeichen (vgl. XML-Beispiel)</li>
+				<li>bessere Lesbarkeit (Ansichtssache)</li>
+			</ul>
+				
+		</section>
+	</div></div>
+	<div class="slide" id="AJAX-1"><div>
+		<section>	
+			<header>
+				<h2>Asynchrones laden von Daten: AJAX</h2>
+			</header>
+
+			<ul>
+				<li><em>Asynchronous JavaScript and XML</em></li>
+				<li>Asynchrone Datenübertragung zwischen Browser und Server</li>
+				<li>"Nachladen von Daten ohne die aktuelle Seite zu verlassen"</li>
+				<li>Technische Grundlage: Das "XHR-Objekt": <code>XMLHttpRequest</code> </li>				
+				<li>Kann für beliebige Inhalte verwendet werden<br/> (nicht nur für XML, auch für JSON)</li>
+				<li>Details: <a href="http://ajaxpatterns.org/XMLHttpRequest_Call"> 		
+					http://ajaxpatterns.org/XMLHttpRequest_Call
+				</a></li>
+			</ul>
+
+		</section>
+	</div></div>
+		
+	<div class="slide" id="AJAX-2"><div>
+		<section>	
+			<header>
+				<h2>Das "XHR-Objekt": Synchrone Verwendung</h2>
+			</header>
+
+			<pre>
+			<code class="lots-of-code">var xhReq = new <mark>XMLHttpRequest()</mark>; </code>
+			<code class="lots-of-code">xhReq.open("GET", "./path/to/your/file", false); </code>
+			<code class="lots-of-code">xhReq.send(null); </code>
+			<code class="lots-of-code">var serverResponse = xhReq.responseText; </code>
+			</pre>
+
+			JavaScript-Ausführung wird angehalten, bis die nachgeladenen Daten zur Verfügung stehen
+			(<em>noch kein AJAX</em> – nur synchrone Kommunikation!)
+
+		</section>
+	</div></div>
+	
+	<div class="slide" id="AJAX-3"><div>
+		<section>	
+			<header>
+				<h2>Das "XHR-Objekt": Asynchrone Verwendung <em>– AJAX</em></h2>
+			</header>
+
+			<pre>
+			<code class="lots-of-code">var xhReq = new <mark>XMLHttpRequest()</mark>; </code>
+			<code class="lots-of-code">xhReq.open("GET", "./path/to/your/file", true);</code>
+			<code class="lots-of-code">xhReq.onreadystatechange = function() { </code>
+			<code class="lots-of-code">	var serverResponse = xhReq.responseText; </code>
+			<code class="lots-of-code">	// (stark vereinfachtes Beispiel) </code>
+			<code class="lots-of-code">}; </code>
+			<code class="lots-of-code">xhReq.send(null); </code>			
+			</pre>
+			
+		</section>
+	</div></div>
+		
+	<div class="slide" id="AJAX-4"><div>
+		<section>	
+			<header>
+				<h2>AJAX: Probleme</h2>
+			</header>
+
+					<strong>Problem 1: Inkonsistente Implementierung in verschiedenen Browsern</strong>
+					<ul>
+						<li>Details: <a href="http://ajaxpatterns.org/XMLHttpRequest_Call"> 		
+							http://ajaxpatterns.org/XMLHttpRequest_Call
+						</a></li>
+					</ul>
+
+					<strong>Problem 2: <em>Same-Origin-Policy</em></strong>
+					<ul>
+						<li>Sicherheitskonzept: Über AJAX können nur Inhalte von der selben Domain geladen werden</li> 
+						<li>Alternative: JSONP (JSON with Padding)</li>
+					</ul>
+
+		</section>
+	</div></div>
+
+	<div class="slide" id="JSONP-1"><div>
+		<section>	
+			<header>
+				<h2>JSONP: Statische Einbindung</h2>
+			</header>
+
+			<strong>Statisch: Anfrage im HTML-Dokument </strong>
+			<pre>
+			<code class="lots-of-code">&lt;script type=&quot;text/javascript&quot;</code>
+			<code class="lots-of-code">src=&quot;http://beispiel.com?jsonp=<mark>meineFunktion</mark>&quot;&gt;&lt;/script&gt;</code>
+			</pre>
+			
+			<strong>JavaScript Antwort: Funktionsaufruf mit JSON-Parameter.</strong>
+			
+			<pre>
+			<code class="lots-of-code">function meineFunktion(<mark>response</mark>) {</code>
+			<code class="lots-of-code">  // Beispiel: Siehe "Flickr Kickstart"</code>
+			<code class="lots-of-code">}</code>
+			</pre>
+			
+		</section>
+	</div></div>
+
+	<div class="slide" id="JSONP-2"><div>
+		<section>	
+			<header>
+				<h2>JSONP: Dynamische Einbindung</h2>
+			</header>
+
+			<strong>Dynamisch: <em>Script element injection</em> </strong>
+
+			<pre>
+			<code class="lots-of-code">// Hinzufügen von Script-Tags zur Laufzeit:</code>
+			<code class="lots-of-code">var s = document.createElement("script");</code>
+			<code class="lots-of-code">s.src="http://beispiel.com?jsonp=meineFunktion"</code>
+			<code class="lots-of-code">document.getElementsByTagName('head')[0].appendChild(s);</code>
+			</pre>
+			
+		</section>
+	</div></div>
+				
+	<div class="slide" id="ThankYou"><div>
+		<section>
+			<header>
+				<h2>Fragen?</h2>
+			</header>
+			<p>Simon Jockers<br/>
+				<a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+		</section>
+	</div></div>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
