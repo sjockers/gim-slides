@@ -8,27 +8,24 @@
 @import url(fonts.css);
 
 body {
-	font: 24px/1.8 'PT Sans', sans-serif;
 	counter-reset: paging;
-	background: #dadada;
 }
 
 a,
 a:link,
 a:visited {
-  color: #3192c5;
+  color: #1F8AB6;
   text-decoration: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: #267198;
+  color: #2fb0d5;
   text-decoration: underline;
 }
 
 h1, h2, h3 {
-	font-family: 'PT Sans Narrow', sans-serif;
 	font-weight: bold;
 } 
 
@@ -37,26 +34,36 @@ h1, h2, h3 {
 ---------------------------------------- */
 
 .meta {
-	line-height: 1.2em;
-  height: 1.2em;
+  height: 24px;
   padding: 8px 0 4px 0;
-  background: #192d38;
+  font-size: 12px;
+  background: #085987;
   color: #FFF;
+	padding: ;
 }
 
-.meta hgroup {
+.meta .container {
 	max-width: 1020px;
 	margin: 0 auto;
 }
 
-.meta h1 {
-	color: #FFF;
-	font-size: .75em;
-	font-weight: normal;
+.meta a,
+.meta a:link,
+.meta a:visited {
+  display: block;
+  width: 192px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url("ots_logo_meta.png") no-repeat;
+  color: #FFF;
+  opacity:0.8;
 }
 
-.meta h1 span {
-	color: #84b3cd;
+.meta a:hover,
+.meta a:active,
+.meta a:focus {
+  opacity:1;
 }
 
 
@@ -68,7 +75,7 @@ h1, h2, h3 {
 }
 
 .slide section {
-	padding: 60px 120px 0;
+	padding: 80px 120px 0;
 	width: 784px;
 	height: 560px;
 	background: #FFF;
@@ -86,7 +93,7 @@ h1, h2, h3 {
 
 /* Header */
 .slide header {
-	margin: 0 0 40px;
+	margin: 0 0 58px;
 	color: #085987;
 	font-size: 1.5em;
 	line-height: 1.13;
@@ -178,7 +185,7 @@ h1, h2, h3 {
 
 /* Code */
 .slide pre {
-	margin: 0 0 20px;
+	margin: 0 0 45px;
 	counter-reset: code;
 	white-space: normal;
 }
@@ -223,11 +230,7 @@ h1, h2, h3 {
 }
 
 /* Cover */
-/* Cover */
-.slide.cover p,
-.slide.cover em,
-.slide.cover strong,
-.slide.cover pre code {
+.slide.cover header {
 	color: #fff;
 }
 
@@ -269,10 +272,6 @@ h1, h2, h3 {
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
-}
-
-.slide.cover.dark header {
-	color: #fff;
 }
 
 /* Shout */
