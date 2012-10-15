@@ -1,3 +1,15 @@
+# Grundlagen der Webentwicklung (Presentation Slides)
+
+Presentation slides to accompany the courses "Grundlagen Interaktive Medien" und "Grundlagen der Webentwicklung" at HTW Berlin. As you might guess from the title, all materials are in German. 
+
+The slides are currently work in progress and will be updated throughout the winter term of 2012. For the slides used in the summer term of 2012, see the tag SoSe-2012.
+
+The presentation slides are built upon [Shower](http://github.com/pepelsbey/shower), a cross-browser presentation template by Vadim Makeev.
+
+Unless otherwise stated, all content is published under [Creative Commons BY-NC-SA License](http://creativecommons.org/licenses/by-nc-sa/3.0/). The sourcecode is [MIT licensed](http://github.com/pepelsbey/license.txt).
+
+---
+
 # Shower
 Сross-browser presentation template.
 
