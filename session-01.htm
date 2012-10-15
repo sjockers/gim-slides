@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>Webstandards 1: HTML</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/gim/styles/style.css">
+</head>
+
+<body class="list">
+
+  <header class="meta">
+		<hgroup class="container">
+			<h1>Grundlagen der Webentwicklung <span>Wintersemester 2012</span></h1>
+		</hgroup>
+  </header>
+
+  <section class="slides">
+
+		<header class="caption">
+			<h1>Webstandards 1: HTML</h1>
+		</header>
+
+		<div class="slide cover w" id="HTML"><div>
+			<section>
+				<img src="pictures/webstandards/html.jpg" alt="">
+			</section>
+		</div></div>	
+
+		<div class="slide" id="Inhalt"><div>
+			<section>
+				<header>
+					<h2>Heute</h2>
+				</header>
+				<ul>
+					<li>Aufbau eines HTML-Dokuments</li>
+					<li>Strukturierung von Texten</li>
+					<li>Semantische Strukturierung von Dokumenten</li>
+					<li>Trennung von Inhalt und Darstellung</li>
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide cover dark" id="Document"><div>
+			<section>
+				<header>
+					<h2>Ein einfaches HTML-Dokument<h1>
+				</header>
+
+				<pre>
+					<code class="lots-of-code">&lt;!doctype html&gt;</code>
+					<code class="lots-of-code">&lt;html&gt;</code>
+					<code class="lots-of-code">  <mark>&lt;head&gt;</mark></code>
+					<code class="lots-of-code">    &lt;title&gt;Das ist der Titel der Seite&lt;/title&gt;</code>
+					<code class="lots-of-code">  <mark>&lt;/head&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;body&gt;</mark></code>
+					<code class="lots-of-code">    &lt;h1&gt;Das ist die Überschrift&lt;/h1&gt;</code>
+					<code class="lots-of-code">    &lt;p&gt;Das ist etwas Fließtext.&lt;/p&gt;</code>
+					<code class="lots-of-code">  <mark>&lt;/body&gt;</mark></code>
+					<code class="lots-of-code">&lt;/html&gt;</code>					
+				</pre>	
+					
+			</section>
+		</div></div>
+
+		<div class="slide" id="Doctype"><div>
+			<section>
+				<header>
+					<h2>Doctype Declaration</h2>
+				</header>
+
+				<em>Old School:</em> XHTML1
+				<pre>
+					<code class="lots-of-code">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;</code>
+					<code class="lots-of-code">	&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code>
+				</pre>	
+						
+				<em>New School:</em> HTML5 
+				<pre>
+					<code class="lots-of-code"><mark>&lt;!doctype html&gt;</mark></code>
+				</pre>			
+				
+			</section>
+		</div></div>
+		
+		<div class="slide" id="Header"><div>
+			<section>
+				<header>
+					<h2>Head: Meta-Informationen<h1>
+				</header>
+
+				<pre>
+					<code class="lots-of-code">&lt;!doctype html&gt;</code>
+					<code class="lots-of-code">&lt;html&gt;</code>
+					<code class="lots-of-code">  &lt;head&gt;</code>
+					<code class="lots-of-code">    <mark>&lt;title&gt;Das ist der Titel der Seite &lt;/title&gt;</mark></code>
+					<code class="lots-of-code">    <mark>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;</mark></code>
+					<code class="lots-of-code">  &lt;/head&gt;</code>
+					<code class="lots-of-code">(...)</code>
+				</pre>	
+					
+			</section>
+		</div></div>
+				
+		<div class="slide" id="Body"><div>
+			<section>
+				<header>
+					<h2>Body: Inhalt des Dokuments<h1>
+				</header>
+
+				<pre>
+					<code class="lots-of-code">(...)</code>
+					<code class="lots-of-code">  &lt;body&gt;</code>
+					<code class="lots-of-code">    <mark>&lt;h1&gt;Das ist der Titel der Seite&lt;/h1&gt;</mark></code>
+					<code class="lots-of-code">    <mark>&lt;p&gt;Das ist etwas Fließtext.&lt;/p&gt;</mark></code>
+					<code class="lots-of-code">  &lt;/body&gt;</code>
+					<code class="lots-of-code">&lt;/html&gt;</code>					
+				</pre>	
+					
+			</section>
+		</div></div>
+
+		<div class="slide" id="TexteStrukturieren"><div>
+			<section>
+				<header>
+					<h2>Texte formatieren (Beispiele)</h2>
+				</header>
+				<ul>
+					<li><code>&lt;h1&gt;</code> <code>&lt;/h1&gt;</code> – Überschriften (<code>h1</code> bis <code>h6</code>)</li>
+				 	<li><code>&lt;p&gt;</code> <code>&lt;/p&gt;</code> – Absätze</li>
+				 	<li><code>&lt;em&gt;</code> <code>&lt;/em&gt;</code> – Betonung (Emphasis)</li>
+				 	<li><code>&lt;strong&gt;</code> <code>&lt;/strong&gt;</code> – Starke Betonung</li>
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide" id="Sonstige"><div>
+			<section>
+				<header>
+					<h2>Sonstige Elemente (Beispiele)</h2>
+				</header>
+				<ul>
+					<li><code>&lt;table&gt;</code> <code>&lt;/table&gt;</code> 					              	– Tabellen
+				 	<li><code>&lt;ul&gt;</code> <code>&lt;/ul&gt;</code> / <code>&lt;ol&gt;</code> <code>&lt;/ol&gt;</code>   	– Listen
+				 	<li><code>&lt;a href=&quot;...&quot;&gt;</code> <code>&lt;/a&gt;</code> 				    	– Links (Anchor)
+				 	<li><code>&lt;img src=&quot;...&quot; alt=&quot;...&quot; /&gt;</code> 			– Bilder			
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide" id="Struktur-0"><div>
+			<section>
+				<header>
+					<h2>HTML-Dokumente strukturieren (Beispiel)</h2>
+				</header>
+				<pre>
+					<code class="lots-of-code">&lt;body&gt;</code>
+					<code class="lots-of-code">  <mark>&lt;header&gt;</mark>(...)<mark>&lt;/header&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;section&gt;</mark>(...)<mark>&lt;/section&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;aside&gt;</mark>(...)<mark>&lt;/aside&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;footer&gt;</mark>(...)<mark>&lt;/footer&gt;</mark></code>
+					<code class="lots-of-code">&lt;/body&gt;</code>
+				</pre>
+			</section>			
+		</div></div>
+
+		<div class="slide cover" id="Struktur-1"><div>
+			<section>
+				<img src="pictures/webstandards/layout-example.svg" alt="">
+			</section>
+		</div></div>
+
+		<div class="slide cover dark" id="Struktur-2"><div>
+			<section>
+				<header>
+					<h2>HTML-Dokumente strukturieren (Beispiel)</h2>
+				</header>
+				<pre>
+					<code class="lots-of-code">&lt;body&gt;</code>
+					<code class="lots-of-code">  <mark>&lt;header&gt;</mark>(...)<mark>&lt;/header&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;section&gt;</mark>(...)<mark>&lt;/section&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;aside&gt;</mark>(...)<mark>&lt;/aside&gt;</mark></code>
+					<code class="lots-of-code">  <mark>&lt;footer&gt;</mark>(...)<mark>&lt;/footer&gt;</mark></code>
+					<code class="lots-of-code">&lt;/body&gt;</code>
+				</pre>
+				<p><strong>Achtung:</strong> Die Verwendung dieser Elemente macht keine Aussage über die Darstellung des Dokuments im Browser. Für das visuelle Anordnen der Elemente wird CSS verwendet.</p>
+
+			</section>			
+		</div></div>
+
+		<div class="slide" id="Struktur-3"><div>
+			<section>
+				<header>
+					<h2>HTML-Dokumente strukturieren: Weitere Elemente</h2>
+				</header>
+				<ul>
+					<li><code>&lt;article&gt;</code> <code>&lt;/article&gt;</code> – Artikel</li>
+					<li><code>&lt;nav&gt;</code> <code>&lt;/nav&gt;</code> – Navigation</li>
+					<li><code>&lt;figure&gt;</code> <code>&lt;/figure&gt;</code> – Abbildung</li>
+					<li><code>&lt;figcaption&gt;</code> <code>&lt;/figcaption&gt;</code> – Bildunterschrift</li>
+				 	<li><code>&lt;div&gt;</code> <code>&lt;/div&gt;</code> – Abschnitt (keine besondere Semantik)</li>
+
+				</ul>
+			</section>			
+		</div></div>
+
+		<div class="slide cover w" id="MM"><div>
+			<section>
+				<header>
+				</header>
+				<img src="pictures/webstandards/mm.jpg" alt="">
+			</section>
+		</div></div>
+
+		<div class="slide" id="DarstellungVsContent"><div>
+			<section>
+				<header>
+					<h2>Darstellung vs. Inhalt</h2>
+				</header>
+
+						<ul>
+							<li><b>Structure</b> – HTML
+								<ul><li>logische Strukturierung des Inhalts</li></ul>
+							</li>
+							<li><b>Presentation</b> – CSS
+								<ul><li>visuelle Darstellung</li></ul>
+							</li>
+							<li><b>Behavior</b> – JavaScript
+								<ul><li>Interaktion mit dem Nutzer</li></ul>
+							</li>							
+						</ul>
+
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="PE"><div>
+			<section>
+				<header>
+					<h2>Progressive Enhancement</h2>
+				</header>
+				<img src="pictures/webstandards/progressive-enhancement.png" alt="">
+			</section>
+		</div></div>
+
+		<div class="slide cover h" id="PlainHTML"><div>
+			<section>
+				<header>
+				</header>
+				<img src="pictures/webstandards/plainhtml.png" alt="">
+			</section>
+		</div></div>
+
+		
+		<div class="slide" id="Presentation"><div>
+			<section>
+
+				<pre>
+					<code class="lots-of-code">	<mark>body</mark> {</code>
+					<code class="lots-of-code">		<mark>font-family</mark> : sans-serif;</code>
+					<code class="lots-of-code">	}</code>
+					<code class="lots-of-code">	<mark>h1</mark> {</code>
+					<code class="lots-of-code">		<mark>color</mark> : green;</code>
+					<code class="lots-of-code">	}</code>
+					<code class="lots-of-code">	<mark>p</mark> {</code>
+					<code class="lots-of-code">		<mark>padding</mark> : 20px;</code>
+					<code class="lots-of-code">		<mark>background-color</mark> : black;</code>
+					<code class="lots-of-code">		<mark>color</mark> : white; </code>
+					<code class="lots-of-code">	}</code>
+				</pre>
+			</section>			
+		</div></div>	
+
+		<div class="slide cover h" id="PlainCSS"><div>
+			<section>
+				<header>
+				</header>
+				<img src="pictures/webstandards/plaincss.png" alt="">
+			</section>
+		</div></div>	
+		
+		<div class="slide" id="BlockQuote"><div>
+			<section>
+				<header>
+					<h2>Graceful Degradation</h2>
+				</header>
+				<blockquote>
+					<p>	An Escalator can never break.<br/> 
+					It can only become stairs.</p>
+				</blockquote>
+				<p>Ein HTML-Dokument funktioniert auch ohne CSS!</p>
+			</section>
+		</div></div>
+
+		<div class="slide" id="Warum"><div>
+			<section>
+				<header>
+					<h2>Warum das alles?</h2>
+				</header>
+				<ul>  
+					<li>Accessibility / „Barrierefreiheit“</li>
+					<li>(Rückwärts-) Kompatibilität</li>
+					<li>einfachere Entwicklung und Pflege</li>
+					<li>Best Practice – weil es alle tun</li>							
+				</ul>
+			</section>
+		</div></div>	
+		
+		<div class="slide w" id="CssZenGarden"><div>
+			<section>
+				<header>
+					<h2>Beispiele</h2>
+				</header>
+				<ul>
+					<li>CSS Zen Garden
+						<ul>
+							<li><a target="_blank" href="http://www.csszengarden.com/?cssfile=212/212.css">Make em Proud</a></li>
+							<li><a target="_blank" href="http://www.csszengarden.com/?cssfile=/206/206.css&page=0">A Walk in the Garden</a></li>
+							<li><a target="_blank" href="http://www.csszengarden.com/?cssfile=176/176.css">Kelmscott</a></li>					
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						Alle drei Websites verwenden ein identisches <a target="_blank" href="http://www.csszengarden.com/?cssfile=0">HTML-Dokument</a>. <br />Sie unterscheiden sich lediglich durch das angewendete CSS.
+					</li>	
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide" id="ThankYou"><div>
+			<section>
+				<header>
+					<h2>Fragen?</h2>
+				</header>
+				<p>Simon Jockers<br/>
+					<a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+			</section>
+		</div></div>
+
+	</section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
