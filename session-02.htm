@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="de-DE">
+<head>
+  <title>Webstandards 1: HTML</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="themes/gim/styles/style.css">
+</head>
+
+<body class="list">
+
+  <header class="meta">
+    <hgroup class="container">
+      <h1>Grundlagen der Webentwicklung <span>Wintersemester 2012</span></h1>
+    </hgroup>
+  </header>
+
+  <section class="slides">
+
+    <header class="caption">
+      <h1>Webstandards 2: CSS Grundlagen</h1>
+    </header>
+
+    <div class="slide cover w" id="MM"><div>
+      <section>
+        <img src="pictures/webstandards/mm.jpg" alt="">
+      </section>
+      <a href="http://www.flickr.com/photos/cowfish/20709381/" class="source">Foto: Billy Abbott</a>    
+    </div></div>
+
+    <div class="slide" id="Inhalt"><div>
+      <section>
+        <header>
+          <h2>Heute</h2>
+        </header>
+        <ul>
+          <li>Trennung von Darstellung und Inhalt</li>
+          <li>Einbinden und Anwenden von CSS</li>
+          <li>Definieren von CSS-Regeln</li>
+          <li>Einfache Layouts mit CSS</li>
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide" id="DarstellungVsContent"><div>
+      <section>
+        <header>
+          <h2>Trennung von Darstellung und Inhalt</h2>
+        </header>
+        <dl>
+          <dd><b>Structure</b> – HTML</dd>
+          <dt>– logische Strukturierung des Inhalts</dt>
+          <dd><b>Presentation</b> – CSS</dd>
+          <dt>– visuelle Darstellung</dt>
+          <dd><b>Behavior</b> – JavaScript</dd>
+          <dt>– Interaktion mit dem Nutzer</dt>
+        </dl>
+      </section>
+    </div></div>
+
+    <div class="slide cover" id="PE"><div>
+      <section>
+        <header>
+          <h2>Progressive Enhancement</h2>
+        </header>
+        <img src="pictures/webstandards/progressive-enhancement.png" alt="">
+      </section>
+    </div></div> 
+    
+    <div class="slide" id="BlockQuote"><div>
+      <section>
+        <header>
+          <h2>Graceful Degradation</h2>
+        </header>
+        <blockquote>
+          <p>
+            An Escalator can never break.<br/> 
+            It can only become stairs.
+          </p>
+        </blockquote>
+        <p>– Ein HTML-Dokument funktioniert auch ohne CSS!</p>
+      </section>
+    </div></div>
+
+    <div class="slide" id="Warum"><div>
+      <section>
+        <header>
+          <h2>Warum das alles?</h2>
+        </header>
+        <ul>  
+          <li>Accessibility / „Barrierefreiheit“</li>
+          <li>(Rückwärts-)Kompatibilität</li>
+          <li>einfachere Entwicklung und Pflege</li>
+          <li>Best Practice – weil es alle tun</li>             
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide cover h" id="PlainHTML"><div>
+      <section>
+        <header>
+        </header>
+        <img src="pictures/webstandards/plainhtml.png" alt="">
+      </section>
+    </div></div>
+
+    <div class="slide cover dark" id="Document"><div>
+      <section>
+        <pre>
+          <code class="lots-of-code"> body {</code>
+          <code class="lots-of-code">   <mark>font-family</mark>: sans-serif;</code>
+          <code class="lots-of-code"> }</code>
+          <code class="lots-of-code"> </code>
+          <code class="lots-of-code"> h1 {</code>
+          <code class="lots-of-code">   <mark>color</mark>: green;</code>
+          <code class="lots-of-code"> }</code>
+          <code class="lots-of-code"> </code>          
+          <code class="lots-of-code"> p {</code>
+          <code class="lots-of-code">   <mark>padding</mark>: 20px;</code>
+          <code class="lots-of-code">   <mark>background-color</mark>: black;</code>
+          <code class="lots-of-code">   <mark>color</mark>: white; </code>
+          <code class="lots-of-code"> }</code>
+        </pre>
+      </section>      
+    </div></div> 
+
+    <div class="slide cover h" id="PlainCSS"><div>
+      <section>
+        <header>
+        </header>
+        <img src="pictures/webstandards/plaincss.png" alt="">
+      </section>
+    </div></div>    
+  
+    <div class="slide" id="Embedding"><div>
+      <section>
+        <header>
+          <h2>Einbinden von CSS</h2>
+        </header>     
+        <dl>
+          <dd>In der Regel als externes Dokument:</dd>
+          <dt><code class="lots-of-code">&lt;link rel=&quot;stylesheet&quot; src=&quot;style.css&quot; /&gt;</code></dt>
+          <dd><em>Alternative:</em> Inline:</dd>
+          <dt><code class="lots-of-code">&lt;div style=&quot;color: blue;&quot;&gt;...&lt;/div&gt; </code></dt>
+          <dd><em>Alternative:</em> Als eigenständiger HTML-Tag:</dd>
+          <dt><code class="lots-of-code">&lt;style&gt;div {color: blue;}&lt;/style&gt; </code></dt>
+        </dl>     
+      </section>
+    </div></div>
+
+    <div class="slide" id="Rules"><div>
+      <section>
+        <header>
+          <h2>Definieren von CSS-Regeln<h1>
+        </header>
+        <pre>
+          <code><mark>selector</mark> { </code>
+          <code>  <mark>property1</mark>: value; </code>
+          <code>  <mark>property2</mark>: value; </code>
+          <code>  <mark>property3</mark>: value; </code>
+          <code>} </code>
+        </pre>            
+      </section>
+    </div></div>
+
+    <div class="slide" id="Whitespace"><div>
+      <section>
+        <header>
+          <h2>Whitespace</h2>
+        </header>
+
+        <p>Folgende Code-Beispiele haben das gleiche Ergebnis:</p>
+
+        <pre>
+          <code class="lots-of-code">p { </code>
+          <code class="lots-of-code">  font-family: arial; </code>
+          <code class="lots-of-code">  color: blue; </code>
+          <code class="lots-of-code">} </code>
+        </pre>
+        <hr />        
+        <pre>
+          <code class="lots-of-code">p {font-family: arial; color: blue;} </code>
+        </pre>
+      </section>      
+    </div></div> 
+    
+    <div class="slide" id="Selectors-1"><div>
+      <section>
+        <header>
+          <h2>Verschiedene Typen von Selektoren (Beispiele)</h2>
+        </header>     
+        <dl>
+          <dd>Der Element-Selektor:</dd>
+          <dt><code class="lots-of-code">div {color: blue;} </code></dt>
+          <dd>Der Class-Selektor:</dd>
+          <dt><code class="lots-of-code">.content {color: blue;} </code></dt>
+          <dd>Der ID-Selektor:</dd>
+          <dt><code class="lots-of-code">#main {color: blue;} </code></dt>
+        </dl>     
+      </section>
+    </div></div>
+        
+    <div class="slide" id="Selectors-2"><div>
+      <section>
+        <header>
+          <h2>Gruppieren von Selektoren</h2>
+        </header>     
+        <p>Folgende Code-Beispiele haben das gleiche Ergebnis:
+
+        <pre>
+          <code class="lots-of-code"><mark>p</mark> {color: blue;} </code>
+          <code class="lots-of-code"><mark>h1</mark> {color: blue;} </code>
+          <code class="lots-of-code"><mark>#example</mark> {color: blue;} </code>
+        </pre>
+        <hr />
+        <pre>
+          <code class="lots-of-code"><mark>p</mark>, <mark>h1</mark>, <mark>#example</mark> {color: blue;} </code>
+        </pre>        
+      </section>
+    </div></div>
+
+    <div class="slide cover dark" id="Selectors-3"><div>
+      <section>
+        <header>
+          <h2>Kombinieren von Selektoren (Beispiele)</h2>
+        </header>     
+
+        <pre>
+          <code class="lots-of-code"><mark>p.warning</mark> { </code>
+          <code class="lots-of-code">   /* <mark>p</mark>-Elemente mit der Klasse <mark>warning</mark> */ </code>
+          <code class="lots-of-code">} </code>          
+        </pre>
+        <hr />
+        <pre>
+          <code class="lots-of-code"><mark>div#example</mark> { </code>
+          <code class="lots-of-code">   /* <mark>div</mark>-Elemente mit der ID <mark>example</mark> */ </code>        
+        <code class="lots-of-code">} </code>          
+        </pre>        
+      </section>
+    </div></div>    
+
+    <div class="slide cover dark" id="Selectors-4"><div>
+      <section>
+        <header>
+          <h2>Kombinieren von Selektoren (Beispiele)</h2>
+        </header>     
+
+        <pre>
+          <code class="lots-of-code"><mark>p</mark> <mark>.warning</mark> { </code>
+          <code class="lots-of-code">   /* Elemente mit der Klasse <mark>warning</mark> </code>
+          <code class="lots-of-code">      innerhalb eines <mark>p</mark>-Elements */ </code>
+          <code class="lots-of-code">} </code> 
+        </pre>
+        <hr />
+        <pre>         
+          <code class="lots-of-code"><mark>.warning</mark> <mark>p</mark> { </code>
+          <code class="lots-of-code">   /* <mark>p</mark>-Elemente innerhalb von</code>
+          <code class="lots-of-code">      Elementen mit der Klasse <mark>warning</mark> */ </code>
+          <code class="lots-of-code">} </code>          
+        </pre>        
+      </section>
+    </div></div>
+
+    <div class="slide cover dark" id="Selectors-5"><div>
+      <section>
+        <header>
+          <h2>Kombinieren von Selektoren (Beispiele)</h2>
+        </header>     
+
+        <pre>
+          <code class="lots-of-code"><mark>div#example</mark> <mark>p</mark> <mark>em.warning</mark> { </code>
+          <code class="lots-of-code">   /* <mark>em</mark>-Elemente mit der Klasse <mark>warning</mark> </code>
+          <code class="lots-of-code">      innerhalb von <mark>p</mark>-Elementen </code>
+          <code class="lots-of-code">      innerhalb eines <mark>div</mark>-Elements </code>
+          <code class="lots-of-code">      mit der ID <mark>example</mark> */ </code>
+          <code class="lots-of-code">} </code> 
+        </pre>      
+      </section>
+    </div></div>
+
+    <div class="slide" id="CSS-Layout"><div>
+      <section>
+        <header>
+          <h2>Layout mit CSS</h2>
+        </header>
+          <ol>
+            <li>Das Box-Modell</li>
+            <li>Die Float-Eigenschaft</li>
+            <li>Die Position-Eigenschaft</li>
+          </ol>
+      </section>      
+    </div></div>
+
+    <div class="slide" id="Box-Model-1"><div>
+      <section>
+        <header>
+          <h2>Das Box-Modell</h2>
+        </header>
+          <ul>
+            <li>CSS-Eigenschaften:
+              <ul>
+                <li><code>display: inline;</code> – Element fließt im Text</li>
+                <li><code>display: block;</code> – Element bildet eine "Box"</li>
+                <li>etc.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Details: <a href="https://developer.mozilla.org/en/CSS/display">https://developer.mozilla.org/en/CSS/display</a>
+          </p>
+      </section>      
+    </div></div>  
+
+    <div class="slide cover w" id="Box-Model-2"><div>
+      <section>
+
+        <img src="pictures/webstandards/boxmodell.png" alt="CSS Boxmodell">      
+        <a style="color: black" href="https://developer.mozilla.org/de/CSS/Boxmodell" class="source">Abbildung: Mozilla Foundation</a>    
+      
+      </section>      
+    </div></div>
+
+    <div class="slide" id="Floating"><div>
+      <section>
+        <header>
+          <h2>Fluss von Elementen</h2>
+        </header>
+          <ul>
+            <li>CSS-Eigenschaften:
+              <ul>
+                <li><code>float: left;</code> – Elemente "fließen" nach links<li>
+                <li><code>float: right;</code> – Elemente "fließen" nach rechts<li>
+                <li><code>clear: left;</code> – Aufheben der Float-Eigenschaft <br/>
+                  (auch <code>clear: right;</code> und <code>clear: both;</code>)<li>
+                <li>etc.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Details: <a href="https://developer.mozilla.org/en/CSS/float">https://developer.mozilla.org/en/CSS/float</a>
+          </p>
+      </section>      
+    </div></div>
+    
+    <div class="slide" id="Positioning"><div>
+      <section>
+        <header>
+          <h2>Positionierung von Elementen</h2>
+        </header>
+          <ul>
+            <li>CSS-Eigenschaften:
+              <ul>
+                <li><code>position: relative;</code> – Relativ zur eigenen Position</li>
+                <li><code>position: absolute;</code> – Absolut zum Elternelement</li>
+                <li><code>top: 100px;</code> – Offset (auch <code>left</code>, <code>right</code>, <code>bottom</code>)</li>            
+                <li>etc.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Details: <a href="https://developer.mozilla.org/en/CSS/position">https://developer.mozilla.org/en/CSS/position</a>
+          </p>
+      </section>      
+    </div></div>
+
+    <div class="slide" id="ThankYou"><div>
+      <section>
+        <header>
+          <h2>Fragen?</h2>
+        </header>
+        <p>Simon Jockers<br/>
+          <a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+      </section>
+    </div></div>
+
+  </section>
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+
+</body>
+</html>
