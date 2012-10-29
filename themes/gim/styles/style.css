@@ -93,6 +93,11 @@ h1, h2, h3 {
 	text-rendering: optimizeLegibility;	
 }
 
+.slide header blockquote {
+	margin-top: 3em;
+	margin-left: 2em;
+}
+
 /* Elements */
 .slide p {
 	margin: 0 0 1em 0;
@@ -182,6 +187,19 @@ h1, h2, h3 {
 
 .slide dt {
 	margin: 0 0 20px;
+}
+
+/* Tables */
+
+.slide table
+{
+	border-collapse: collapse; /* 'cellspacing' equivalent */
+}
+
+.slide table td, 
+.slide table th
+{
+	padding: 0 10px; /* 'cellpadding' equivalent */
 }
 
 /* Code */
