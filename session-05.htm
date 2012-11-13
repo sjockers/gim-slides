@@ -387,7 +387,7 @@
 							<ul>
 								<li><code>float: left;</code> – Elemente "fließen" nach links<li>
 								<li><code>float: right;</code> – Elemente "fließen" nach rechts<li>
-								<li><code>clear: left;</code> – Aufheben der Float-Eigenschaft <br/>
+								<li><code>clear: left;</code> – Aufheben der Float-Eigenschaft <br/>
 									(auch <code>clear: right;</code> und <code>clear: both;</code>)<li>
 								<li>etc.</li>
 							</ul>
@@ -397,6 +397,53 @@
 			</section>			
 		</div></div>
 
+		<div class="slide cover" id="ResponsiveDesign"><div>
+			<section>
+				<header>
+					<h2>Responsive Design</h2>
+				</header>			
+				<img src="pictures/layout/responsive-design.jpg" alt="">
+				<a href="http://www.flickr.com/photos/69797234@N06/7203485148/" class="source dark">Abbildung: Antoine Lefeuvre</a>			
+			</section>
+		</div></div>
+
+		<div class="slide" id="media-queries-1"><div>
+			<section>
+				<header>
+					<h2>Media Queries</h2>
+				</header>
+				<ul>
+					<li>Ermöglichen es, CSS für bestimmte Ausgabemedien zu definieren: 
+						<ul>
+							<li>Art des Ausgabegeräts (siehe Beispiel)</li>
+							<li>Bildschirmauflösung, Seitenverhältnis, Ausrichtung, etc.</li>
+						</ul>
+					</li>
+				</ul>	
+				<pre>
+				<code class="lots-of-code">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;core.css&quot;
+media=&quot;<mark>screen</mark>&quot; /&gt;</code>
+				<code class="lots-of-code">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;print.css&quot;
+media=&quot;<mark>print</mark>&quot; /&gt;</code>
+ 				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide" id="media-queries-2"><div>
+			<section>
+				<header>
+					<h2>Media Queries</h2>
+				</header>
+				<p>Können auch direkt in einem Stylesheet angegeben werden:</p>
+				<pre>
+					<code class="lots-of-code">@media screen and (max-device-width: 480px) {</code>
+	  			<code class="lots-of-code">	.column {</code>
+	    		<code class="lots-of-code">		float: none;</code>
+	  			<code class="lots-of-code">	}</code>
+					<code class="lots-of-code">}</code>
+ 				</pre>
+			</section>
+		</div></div>
 
 		<div class="slide" id="ThankYou"><div>
 			<section>
