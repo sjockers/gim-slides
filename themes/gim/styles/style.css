@@ -135,7 +135,8 @@ h1, h2, h3 {
 .slide blockquote {
 	font-style: italic;
 	font-size: 1.5em;
-	line-height: 1.13;
+	line-height: 1.4em;
+	padding-bottom: 1em;
 }
 
 .slide blockquote:before {
@@ -310,6 +311,9 @@ h1, h2, h3 {
 	border: none;
 }
 
+.slide a.source.dark {
+	color: black;
+}
 
 /* HRs */
 .slide hr {
