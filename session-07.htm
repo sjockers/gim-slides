@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+  <title>GIM - Session 7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="themes/gim/styles/style.css">
+  <!--
+    To apply styles to the certain slides
+    use slide ID to get needed elements
+    -->
+
+</head>
+<body class="list">
+
+  <header class="meta">
+  <hgroup class="container">
+    <h1>Grundlagen der Webentwicklung <span>Wintersemester 2012</span></h1>
+  </hgroup>
+  </header>
+
+  <section class="slides">
+  
+  <div class="slide cover w" id="Cover"><div>
+    <section>
+      <img src="pictures/accessibility/kinobesetzung.jpeg" alt="Rollstuhlfahrer besetzen ein Kino">
+    </section>
+  </div></div>
+
+    <div class="slide" id="Index"><div>
+      <section>
+        <header>
+          <h2>Human-Computer-Interaction (HCI)</h2>
+        </header>
+        <p>Die benutzergerechte Gestaltung von interaktiven Systemen.</p>
+        <strong>Themen im Rahmen dieses Seminars:</strong>
+        <ul>
+          <li>Accessibility <em>(dt. „Barrierefreiheit“)</em></li> 
+          <li>Usability <em>(dt. „Gebrauchstauglichkeit“)</em></li>
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide" id="quote"><div>
+      <section>
+        <header>
+          <h2>Accessibility</h2>
+        </header>
+        <blockquote>
+          Im Kern der Barrierefreiheit steht die Aufgabe, allen Menschen die Teilnahme an gesellschaftlichen Prozessen sowie Zugang zu Informationen und Diensten zu ermöglichen.
+        </blockquote>         
+        <cite>Quelle: Westbomke, J. <em>Barrierefreies Webdesign</em>, erschienen in <br/>Weber, W. <em>Kompendium Informationsdesign</em> 2008, S. 363</cite>
+      </section>
+    </div></div>
+
+    <div class="slide" id="intro"><div>
+      <section>
+        <header>
+          <h2>Web Accessibility</h2>
+        </header>   
+        <p><em>Angebote im Web sollten von allen Menschen genutzt werden können, unabhängig von ihren körperlichen und technischen Möglichkeiten.</em></p>        
+      </section>
+    </div></div>
+    
+    <div class="slide" id="wer-1"><div>
+      <section>
+        <header>
+          <h2>Nutzer mit körperlichen Einschränkungen</h2>
+        </header>
+        <ul>
+          <li>Blinde und Sehbehinderte</li>
+          <li>Gehörlose und Hörbehinderte</li>
+          <li>motorisch eingeschränkte Menschen</li>
+          <li>Menschen mit Lernschwäche</li>
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide" id="wer-2"><div>
+      <section>
+        <header>
+          <h2>Nutzer mit technischen Einschränkungen</h2>
+        </header>
+        <ul>
+          <li>Nutzer mit spezieller Hard- oder Software</li>
+          <li>Nutzer mit langsamen Internetverbindungen</li>
+          <li>im weiteren Sinne auch autonome Software: Bots (z.B. Webcrawler)</li>
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide cover" id="Desktop"><div>
+      <section>
+        <img src="pictures/accessibility/imac.jpg" alt="" />
+      </section>    
+      <a href="http://www.flickr.com/photos/jamesroseuk/3794225409/" class="source">Foto: James Rose</a>
+    </div></div>
+
+    <div class="slide cover" id="Tablet"><div>
+      <section>
+        <img src="pictures/accessibility/ipad.jpg" alt="" />
+      </section>    
+      <a href="http://www.flickr.com/photos/ivyfield/4497654605" class="source">Foto: Yutaka Tsutano</a>
+    </div></div>
+
+    <div class="slide cover" id="OLPC"><div>
+      <section>
+        <img src="pictures/accessibility/olpc.jpg" alt="" />
+      </section>    
+      <a href="http://www.flickr.com/photos/yanov/2414030360/" class="source">Foto: Phil Yanov</a>
+    </div></div>
+
+    <div class="slide cover" id="Braillezeile"><div>
+      <section>
+        <img src="pictures/accessibility/screenreader.jpg" alt="" />
+      </section>    
+      <a href="http://www.flickr.com/photos/visualpunch/5201363064/" class="source">Foto: visualpun.ch</a>
+    </div></div>
+    
+    <div class="slide" id="AT"><div>
+      <section>
+        <header>
+          <h2>Assistive Technology</h2>
+        </header>
+        <p>Hard- und Software, die Behinderte bei der Nutzung von Computern interaktiven Systemen unterstützt.</p>
+        <strong>Beispiel: Screenreader</strong>
+        <ul>  
+            <li>nicht-visuelle Ausgabe von Informationen (statt Bildschirmdarstellung)</li>
+            <li>
+              Ausgabe findet <em>serialisiert</em> akustisch oder taktil statt
+              <br/>(Sprachsynthese oder Braillezeile)
+              </ul>
+            </li>
+        </ul>     
+      </section>
+    </div></div>
+      
+    <div class="slide" id="wcag-1"><div>
+      <section>
+        <header>
+          <h2>WCAG</h2>
+        </header>
+        <ul>
+          <li><em>Web Content Accessibility Guidelines</em></li>
+          <li>Leitfaden für Accessibility im Web</li>
+          <li><em>Recommendation</em> des W3C</li>
+          <li><a href="http://www.w3.org/WAI/intro/wcag.php">http://www.w3.org/WAI/intro/wcag.php</a></li>          
+        </ul>     
+      </section>
+    </div></div>
+    
+    <div class="slide" id="wcag-2"><div>
+      <section>
+        <header>
+          <h2>1. Perceivable</h2>
+        </header>
+        <ul>
+          <li>Provide text alternatives for non-text content.</li>
+          <li>Provide captions and other alternatives for multimedia.</li>
+          <li>Create content that can be presented in different ways,
+            <br/>including by assistive technologies, without losing meaning.</li>
+          <li>Make it easier for users to see and hear content.</li>
+        </ul>         
+        <a href="http://www.w3.org/WAI/WCAG20/glance/">http://www.w3.org/WAI/WCAG20/glance/</a>
+      </section>
+    </div></div>
+
+    <div class="slide" id="wcag-4"><div>
+      <section>
+        <header>
+          <h2>2. Operable</h2>
+        </header>
+        <ul>
+          <li>Make all functionality available from a keyboard.</li>
+          <li>Give users enough time to read and use content.</li>
+          <li>Do not use content that causes seizures.</li>
+          <li>Help users navigate and find content.</li>
+        </ul>         
+        <a href="http://www.w3.org/WAI/WCAG20/glance/">http://www.w3.org/WAI/WCAG20/glance/</a>
+      </section>
+    </div></div>
+
+    <div class="slide" id="wcag-5"><div>
+      <section>
+        <header>
+          <h2>3. Understandable</h2>
+        </header>
+        <ul>
+          <li>Make text readable and understandable.</li>
+          <li>Make content appear and operate in predictable ways.</li>
+          <li>Help users avoid and correct mistakes.</li>
+        </ul>         
+        <a href="http://www.w3.org/WAI/WCAG20/glance/">http://www.w3.org/WAI/WCAG20/glance/</a>
+      </section>
+    </div></div>
+
+    <div class="slide" id="wcag-6"><div>
+      <section>
+        <header>
+          <h2>4. Robust</h2>
+        </header>
+        <ul>
+          <li>Maximize compatibility with current and future user tools.</li>
+        </ul>         
+        <a href="http://www.w3.org/WAI/WCAG20/glance/">http://www.w3.org/WAI/WCAG20/glance/</a>
+      </section>
+    </div></div>
+
+    <div class="slide" id="wcag-7"><div>
+      <section>
+        <header>
+          <h2>In der Praxis</h2>
+        </header>
+        <ul>
+          <li>Verwendung von semantischem, validem HTML.</li>
+          <li>Trennung der Struktur des Inhalts von seiner Darstellung.</li>
+          <li>Nutzung von <em>Unobtrusive JavaScript</em>.</li>
+          <li>Sparsamer, zurückhaltender Einsatz von Animationen.</li>
+          <li>Ausreichend große Schrift, ausreichend hoher Kontrast.</li>
+          <li>Klare, leicht verständliche Sprache.</li>
+          <li>Alternative Texte für Grafiken und audiovisuelle Inhalte.</li>
+        </ul>
+      </section>
+    </div></div>
+    
+    <div class="slide" id="html-1"><div>
+      <section>
+        <header>
+          <h2>HTML-Techniken (Beispiele)</h2>
+        </header>
+        <strong>Verwendung semantischer HTML-Tags</strong>
+        <pre>
+          <code>&lt;!-- richtig: semantischer code: --&gt;</code>
+          <code>&lt;<mark>h1</mark>&gt;&Uuml;berschrift&lt;<mark>/h1</mark>&gt;</code>
+        </pre>
+        <pre>
+          <code>&lt;!-- falsch: nicht-semantischer code: --&gt;</code>
+          <code>&lt;<mark>span</mark> style=&quot;size: 2em;&quot;&gt;&Uuml;berschrift&lt;<mark>/span</mark>&gt;</code>
+        </pre>      
+      </section>
+    </div></div>
+
+    <div class="slide" id="html-2"><div>
+      <section>
+        <header>
+          <h2>HTML-Techniken (Beispiele)</h2>
+        </header>
+        <strong>Alternative Inhalte für Bilder</strong>
+        <pre>
+          <code>&lt;img src=&quot;chuck.png&quot; <mark>alt</mark>=&quot;Portrait von Chuck Norris&quot; /&gt;</code>
+        </pre>
+        <strong>Erklärung von Abkürzungen</strong>
+        <pre>
+          <code>&lt;<mark>abbr</mark> title=&quot;Zweites Deutsches Fernsehen&quot;&gt;ZDF&lt;<mark>/abbr</mark>&gt;</code>
+        </pre>
+      </section>
+    </div></div>
+
+    
+    <div class="slide" id="html-4"><div>
+      <section>
+        <header>
+          <h2>HTML-Techniken (Beispiele)</h2>
+        </header>
+        <strong>Angabe der Sprache</strong>
+        <pre>
+          <code>&lt;!-- komplettes Dokument: --&gt;</code>
+          <code>&lt;html <mark>lang</mark>=&quot;de&quot;&gt;</code>
+        </pre>
+        <pre>
+          <code>&lt;!-- einzelne Tags: --&gt;</code>
+          <code>&lt;p <mark>lang</mark>=&quot;en&quot;&gt;</code>
+        </pre>
+      </section>
+    </div></div>
+
+    <div class="slide" id="ARIA-1"><div>
+      <section>
+        <header>
+          <h2>ARIA</h2>
+        </header>   
+          <ul>
+            <li><em>Accessible Rich Internet Applications</em></li>
+            <li>Erweiterung von HTML (zusätzliche Attribute)</li>
+            <li>Verbessert die Zugänglichkeit von interaktive Webseiten und Webanwendungen (Stichwort AJAX)</li>
+            <li>kein Einfluss auf die visuelle Darstellung im Browser</li>
+          </ul>
+      </section>
+    </div></div>
+    
+    <div class="slide" id="ARIA-2"><div>
+      <section>
+        <header>
+          <h2>ARIA-Techniken (Beispiele)</h2>
+        </header>
+        <pre>
+          <code>&lt;!-- ARIA Roles: --&gt;</code>
+          <code>&lt;a href=&quot;&quot; title=&quot;okay&quot; <mark>role</mark>=&quot;button&quot;&gt;OK&lt;/a&gt;</code>
+        </pre>
+        <pre>
+          <code>&lt;!-- Live Areas: --&gt;</code>
+          <code>&lt;span <mark>aria-live</mark>=&quot;polite&quot;&gt;Lorem Ipsum dolor sit&lt;/span&gt;</code>
+        </pre>
+        <p>Hintergrund: <a href="http://www.hessendscher.de/wai-aria/">Einführung in WAI ARIA</a>
+      </section>
+    </div></div>
+
+    <div class="slide" id="BITV-1"><div>
+      <section>
+        <header>
+          <h2>Web Accessibility in Deutschland</h2>
+        </header>   
+          <strong>Gesetzlich geregelt in der BITV</strong>
+          <ul>
+            <li><em>Barrierefreie-Informationstechnik-Verordnung</em></li>
+            <li>Leitfaden für zugängliche Gestaltung von Inhalten im Web</li>
+            <li>Ergänzung zum Behindertengleichstellungsgesetzes (BGG)</li>
+            <li>baut auf den WCAG auf</li>
+            <li>Verbindlich für Webseiten von staatlichen Einrichtungen</li>
+          </ul>
+      </section>
+    </div></div>
+
+    <div class="slide" id="BITV-Test"><div>
+      <section>
+        <header>
+          <h2>Überprüfung der Accessibility von Webseiten</h2>
+        </header>   
+          <ul>
+            <li>automatisierte Tests (ungenau)</li>
+            <li>Verwendung eines Screenreaders (sehr aufwändig)</li>
+            <li>In der Praxis: Annäherung:
+              <ul>
+                <li>Deaktivieren von CSS im Browser</li>
+                <li>Verwendung eines Textbrowsers (z.B. <a href="http://lynx.isc.org/">Lynx</a>)</li>
+              </ul>
+            </li>
+            <li>In der Praxis: Leitfadengestützte Tests (z.B. <a href="http://www.bitvtest.de/">http://www.bitvtest.de/</a>)</li>         
+          </ul>
+      </section>
+    </div></div>
+          
+    <div class="slide" id="ThankYou"><div>
+      <section>
+        <header>
+          <h2>Fragen?</h2>
+        </header>
+        <p>Simon Jockers<br/>
+          <a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+      </section>
+    </div></div>
+
+  </section>
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+  <!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
