@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+  <title>GIM - Session 6</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="themes/gim/styles/style.css">
+  <!--
+    To apply styles to the certain slides
+    use slide ID to get needed elements
+    -->
+
+</head>
+<body class="list">
+
+  <header class="meta">
+    <hgroup class="container">
+      <h1>Grundlagen der Webentwicklung <span>Wintersemester 2012</span></h1>
+    </hgroup>
+  </header>
+
+  <section class="slides">
+  
+    <div class="slide" id="Index"><div>
+      <section>
+        <header>
+          <h2>Human-Computer-Interaction (HCI)</h2>
+        </header>
+        <p>Die benutzergerechte Gestaltung von interaktiven Systemen.</p>
+        <strong>Themen im Rahmen dieses Seminars:</strong>
+        <ul>
+          <li>Usability <em>(dt. „Gebrauchstauglichkeit“)</em></li>
+          <li>Accessibility <em>(dt. „Barrierefreiheit“)</em></li> 
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide cover" id="abc-modell"><div>
+      <section>
+        <header>
+          <h2>Das ABC-Modell</h2>
+        </header>
+        <img src="pictures/hci/abc.png" alt="">
+      </section>
+    </div></div>
+    
+    <div class="slide" id="UI-1"><div>
+      <section>
+        <header>
+          <h2>Verschiedene Möglichkeiten der Interaktion</h2>
+        </header>
+        <ul>
+          <li>Command Line Interface</li>
+          <li>Graphical User Interface</li>
+          <li>„Natural“ User Interfaces</li>
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide" id="CLI"><div>
+      <section>
+        <header>
+          <h2>Command Line Interface (CLI)</h2>
+        </header>
+        <ul>
+          <li>(Auch: <em>Kommandozeile, Terminal, Konsole</em>)</li>
+          <li>textbasierte, befehlsorientierte Benutzung</li>
+          <li>Der Nutzer muss sich abstrakte Befehle merken (z.B. <code>cd</code>, <code>ls</code>)
+            <br/>– oder vor der Benutzung nachlesen, wie diese Verwendet werden.</li>
+          <li>Sehr effizient für entsprechend geschulte und routinierte „Power User“
+            <br/>– aber hohe Lernschwelle für die Mehrheit der Nutzer.</li>
+        </ul> 
+      </section>
+    </div></div>
+    
+    <div class="slide" id="GUI"><div>
+      <section>
+        <header>
+          <h2>Graphical User Interfaces (GUI)</h2>
+        </header>
+        <ul>
+          <li>Interaktion wird durch grafische Darstellung unterstützt</li>
+          <li>Metaphern verbessern die Erlernbarkeit (z.B. Papierkorb, Schreibtisch)</li>
+          <li>ermöglicht die "direkte Manipulation" von digitalen Information</li>
+          <li>dominierendes Grundkonzept: <em>WIMP</em></li>
+        </ul> 
+      </section>
+    </div></div>
+    
+      <div class="slide" id="WIMP"><div>
+      <section>
+        <header>
+          <h2>Das WIMP-Konzept</h2>
+        </header>
+        <ul>
+          <li>Windows</li>
+          <li>Icons</li>
+          <li>Menus</li>
+          <li>Pointing Devices</li>
+        </ul> 
+      </section>
+    </div></div>
+
+    <div class="slide cover" id="Tablet"><div>
+      <section>
+        <img src="pictures/hci/ipad.jpg" alt="" />
+      </section>    
+      <a href="http://www.flickr.com/photos/ivyfield/4497654605" class="source">Foto: Yutaka Tsutano</a>
+    </div></div>
+
+    <div class="slide cover" id="Wii"><div>
+      <section>
+        <img src="pictures/hci/wii.jpg" alt="" />
+      </section>    
+      <a href="http://www.flickr.com/photos/kurioso/893608608/" class="source">Foto: Kevin Cheng</a>
+    </div></div>
+          
+    <div class="slide" id="NUI"><div>
+      <section>
+        <header>
+          <h2>„Natural“ User Interfaces (NUI)</h2>
+        </header>
+        <ul>
+          <li>(Auch: <em>Gestural Interfaces</em>)</li>
+          <li>Grafische Nutzeroberfläche ohne <em>Pointing Device</em></li>
+          <li>Interaktion durch Gesten (z.B. Touchscreen, frei im Raum)</li>
+          <li><em>noch direktere</em> Manipulation</li>
+          <li>ermöglichen „intuitivere“ oder „natürlichere“ Bedienung (umstritten)
+            <br/><a href="http://www.jnd.org/dn.mss/natural_user_interfa.html">Don Norman: „Natural User Interfaces Are Not Natural“</a></li>
+        </ul>
+      </section>
+    </div></div>
+    
+    <div class="slide" id="quote"><div>
+      <section>
+        <header>
+          <h2>Usability</h2>
+        </header>
+        <blockquote>
+          ... the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use.
+        </blockquote>         
+        <cite>EN ISO 9241-11</cite>
+      </section>
+    </div></div>
+
+    <div class="slide" id="quote-de"><div>
+      <section>
+        <header>
+          <h2>Gebrauchstauglichkeit</h2>
+        </header>   
+        <p>Beschreibt, wie gut eine Benutzeroberfläche die Erledigung einer bestimmten Aufgabe ermöglicht, nach den Kriterien</p>
+        <ul>
+          <li>Effektivität</li>
+          <li>Effizienz</li>
+          <li>Zufriedenheit (oder besser: Zufriedenstellung)</li>
+        </ul>       
+      </section>
+    </div></div>
+    
+    <div class="slide" id="criterions"><div>
+      <section>
+        <ol>
+          <li>Aufgabenangemessenheit</li>
+          <li>Selbstbeschreibungsfähigkeit</li>
+          <li>Steuerbarkeit</li>
+          <li>Erwartungskonformität</li>
+          <li>Fehlertoleranz</li>
+          <li>Lernförderlichkeit</li>
+          <li>Individualisierbarkeit</li>
+        </ol>
+        <p><em>EN ISO 9241-110 – Grundsätze der Dialoggestaltung</em></p>
+      </section>
+    </div></div>
+    
+    <div class="slide" id="criterion-1"><div>
+      <section>
+        <header>
+          <h2>Aufgabenangemessenheit</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist aufgabenangemessen, wenn er den Benutzer unterstützt, seine Arbeitsaufgabe effektiv und effizient zu erledigen.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-1"><div>
+      <section>
+        <header>
+          <h2>Aufgabenangemessenheit: Beispiele</h2>
+        </header>
+        <strong>Ausfüllen von Web-Formularen</strong>         
+        <ul>
+          <li>sinnvoll vorausgewählte Optionen (z.B. bei Checkboxen)</li>
+          <li>automatische Vervollständigung bei Eingabefeldern</li>
+          <li>keine Abfrage von Angaben, deren Zweck für den Nutzer nicht nachvollziehbar ist</li>
+        </ul>
+      </section>
+    </div></div>
+      
+    <div class="slide" id="criterion-2"><div>
+      <section>
+        <header>
+          <h2>Selbstbeschreibungsfähigkeit</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist selbstbeschreibungsfähig, wenn jeder einzelne Dialogschritt durch Rückmeldung des Dialogsystems unmittelbar verständlich ist oder dem Benutzer auf Anfrage erklärt wird.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-2"><div>
+      <section>
+        <header>
+          <h2>Selbstbeschreibungsfähigkeit: Beispiele</h2>
+        </header>
+        <strong>Hyperlinks auf Webseiten</strong>         
+        <ul>
+          <li>klare, beschreibende Texte für Links 
+            <br/>(z.B. „zum Download des Handbuchs“ anstatt nur „Hier klicken!“)</li>
+          <li>bei Links zu downloadbaren Dateien, Dateigröße und Format angeben</li>
+          <li>externe Links als solche kennzeichenen (z.B. durch entsprechendes Icon)</li>
+        </ul>
+      </section>
+    </div></div>
+    
+    <div class="slide" id="criterion-3"><div>
+      <section>
+        <header>
+          <h2>Steuerbarkeit</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist steuerbar, wenn der Benutzer in der Lage ist, den Dialogablauf zu starten sowie seine Richtung und Geschwindigkeit zu beeinflussen, bis das Ziel erreicht ist.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-3"><div>
+      <section>
+        <header>
+          <h2>Steuerbarkeit: Beispiele</h2>
+        </header>
+        <strong>Bestellvorgang in einem Online-Shop (mehrstufiges Formular)</strong>          
+        <ul>
+          <li>Der Nutzer kann während des Bestellvorgangs zu den vorherigen Stufen des Prozesses wechseln um seine Angaben zu prüfen und gegebenenfalls nachträglich anpassen.</li>
+        </ul>
+      </section>
+    </div></div>
+    
+    <div class="slide" id="criterion-4"><div>
+      <section>
+        <header>
+          <h2>Fehlertoleranz</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist fehlertolerant, wenn das beabsichtigte Arbeitsergebnis trotz erkennbar fehlerhafter Eingaben entweder mit keinem oder mit minimalem Korrekturaufwand durch den Benutzer erreicht werden kann.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-4"><div>
+      <section>
+        <header>
+          <h2>Fehlertoleranz: Beispiele</h2>
+        </header>
+        <strong>Fehler beim Ausfüllen eines Web-Formulars</strong>          
+        <ul>
+          <li>Bei fehlenden oder offensichtlich fehlerhaften Angaben wird der Nutzer vor dem Versenden des Formulars auf den genauen Fehler aufmerksam gemacht.</li>
+          <li>Wurde ein fehlerhaftes Formular versendet, erhält der Nutzer die Möglichkeit, die fehlerhafte Eingabe zu korrigieren, ohne das gesamte Formular erneut ausfüllen zu müssen.</li>
+        </ul>
+      </section>
+    </div></div>
+      
+    <div class="slide" id="criterion-5"><div>
+      <section>
+        <header>
+          <h2>Erwartungskonformität</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist erwartungskonform, wenn er konsistent ist und den Merkmalen des Benutzers entspricht, z.B. den Kenntnissen aus dem Arbeitsgebiet, der Ausbildung und der Erfahrung des Benutzers sowie den allgemein anerkannten Konventionen.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-5"><div>
+      <section>
+        <header>
+          <h2>Erwartungskonformität: Beispiele</h2>
+        </header>
+        <strong>Navigation auf einer Website</strong>         
+        <ul>
+          <li>Ein Klick auf das Logo, das sich im oberen linken Bereich der Website befindet, bringt den Nutzer zurück auf die Startseite</li>
+          <li>Unterstrichene Wörter im Fließtext sind Links</li>
+          <li>Symbole werden in gängiger Form eingesetzt (z.B. ein Briefumschlag verdeutlicht einen Link auf die Kontakt-Seite)</li>
+        </ul>
+      </section>
+    </div></div>
+
+    <div class="slide" id="criterion-6"><div>
+      <section>
+        <header>
+          <h2>Lernförderlichkeit</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist lernförderlich, wenn er den Benutzer beim Erlernen des Dialogsystems unterstützt und anleitet.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-6"><div>
+      <section>
+        <header>
+          <h2>Lernförderlichkeit: Beispiele</h2>
+        </header>
+        <strong>Hilfefunktionen in einer komplexen Web-Anwendung</strong> 
+        <ul>
+          <li>Bei der erstmaligen Benutzung kann sich der Nutzer durch eine „Guided Tour“ mit der Anwendung vertraut machen.</li>
+          <li>Der Nutzer kann über eine Hilfefunktion Informationen zur Benutzung der Anwendung erhalten</li>
+        </ul>       
+      </section>
+    </div></div>
+      
+    <div class="slide" id="criterion-7"><div>
+      <section>
+        <header>
+          <h2>Individualisierbarkeit</h2>
+        </header>
+        <blockquote>
+          Ein Dialog ist individualisierbar, wenn das Dialogsystem Anpassungen an die Erfordernisse der Arbeitsaufgabe, individuelle Vorlieben des Benutzers und Benutzerfähigkeiten zulässt.
+        </blockquote>         
+      </section>
+    </div></div>
+    
+    <div class="slide" id="example-7"><div>
+      <section>
+        <header>
+          <h2>Individualisierbarkeit: Beispiele</h2>
+        </header>
+        <strong>Anpassung der Darstellung einer Website</strong>  
+        <ul>
+          <li>Der Nutzer kann die auf der Website verwendete Schriftgröße anpassen.</li>
+          <li>Der Nutzer kann den Helligkeitskontrast zwischen Schrift- und Hintergrundfarbe anpassen.</li>
+        </ul>       
+      </section>
+    </div></div>
+      
+    <div class="slide" id="usability-tests"><div>
+      <section>
+        <header>
+          <h2>Usability-Evaluation</h2>
+        </header>
+        <ul>
+          <li>Befragung von Nutzern</li>
+          <li>
+            Beobachtung von Nutzern bei der Verwendung („Usability Tests“)
+            <br/>oft mit Hilfe von technischen Hilfen:
+            <ul>
+              <li>Aufzeichnung und Auswertung von Nutzerinteraktion</li>
+              <li>Aufzeichnung und Auswertung der Augenbewegung (<em>Eyetracking</em>)</li>
+            </ul>
+          </li>
+          <li>Evaluation durch Experten</li>
+        </ul>
+      </section>
+    </div></div>
+          
+    <div class="slide" id="ThankYou"><div>
+      <section>
+        <header>
+          <h2>Fragen?</h2>
+        </header>
+        <p>Simon Jockers<br/>
+          <a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+      </section>
+    </div></div>
+
+  </section>
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+  <!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
