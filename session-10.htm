@@ -20,359 +20,22 @@
       <h1>JavaScript: AJAX, JSON und XML</h1>
     </header>
 
+    <div class="slide cover h" id="Cover-AJAX"><div>
+      <section>
+        <img src="pictures/javascript/ajax.jpg" alt="">
+      </section>
+    </div></div>
+
     <div class="slide" id="Index"><div>
       <section>
         <header>
           <h2>Übersicht</h2>
         </header>
         <ul>
-          <li>JavaScript Grundlagen (Wiederholung)</li>
-          <li>Das DOM (Wiederholung)</li>
-          <li>Funktionen in JavaScript</li>
-          <li>Event-Handling in JavaScript</li>
+          <li>Exkurs: XML und JSON</li>
+          <li>Asynchrones Laden von Daten mit AJAX</li>
+          <li>AJAX: Probleme und alternative Ansätze</li>
         </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Hintergrund"><div>
-      <section>
-        <header>
-          <h2>Was ist JavaScript?</h2>
-        </header>
-        <ul>
-          <li><em>nicht</em> Java!</li>
-          <li>nur syntaktisch an Java angelehnt</li>
-          <li>
-            Dynamische Skriptsprache
-            <ul>
-              <li>Sourcecode wird zur Laufzeit interpretiert</li>
-            </ul>
-          </li>
-          <li>
-            Objektbasierte Sprache
-            <ul>
-              <li>Es gibt Objekte, aber keine Klassen</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Typisierung-1"><div>
-      <section>
-        <header>
-          <h2>Dynamische Typisierung</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code"> var i = <mark>1</mark>;</code>
-          <code class="lots-of-code"> i = <mark>"ein String"</mark>;</code>
-          <code class="lots-of-code"> i = <mark>true</mark>;</code>
-        </pre>
-        <ul>
-          <li>Die Typisierung erfolgt zur Laufzeit.</li>
-          <li>Der Typ einer Variablen kann sich bei der Wertzuweisung ändern.</li>
-          <li>Der Typ einer Variablen ergibt sich aus ihrem Wert.</li>
-        </ul>
-      </section>
-    </div></div>
-
-
-    <div class="slide" id="Typisierung-2"><div>
-      <section>
-        <header>
-          <h2>Typen (Beispiele)</h2>
-        </header>
-        <ul>
-          <li>
-            Wenige primitive Typen:
-            <ul>
-              <li><code>Number</code> (keine Unterscheidung zwischen Float und Integer)</li>
-              <li><code>String</code></li>
-              <li><code>Boolean</code></li>
-            </ul>
-          </li>
-          <li>Besondere Typen: <code>Array</code>, <code>Object</code> und <code>Function</code></li>
-          <li>Besondere Werte: <code>null</code> und <code>undefined</code></li>
-        </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Arrays"><div>
-      <section>
-        <header>
-          <h2>Array</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code">var emptyArray = <mark>[]</mark>;</code>
-          <code class="lots-of-code">var homogenousArray = <mark>[1, 2, 3]</mark>;</code>
-          <code class="lots-of-code">var heterogenousArray = <mark>["one", 1, 2.0, false]</mark>;</code>
-        </pre>
-        <ul>
-          <li>Ein Array kann Objekte verschiedenen Typs enthalten.</li>
-          <li>Die Länge eines Arrays ist dynamisch.</li>
-          <li>Zugriff über: <code>homogeneousMap[0]<code></li>
-        </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Objects"><div>
-      <section>
-        <header>
-          <h2>Object</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code">var emptyMap = <mark>{}</mark>;  </code>
-          <code class="lots-of-code">var homogenousMap = <mark>{one: 1, two: 2, three: 3};</mark></code>
-          <code class="lots-of-code">var heterogenousMap = <mark>{one: 1, two: "two", three: 3.0};</mark></code>
-        </pre>
-        <ul>
-          <li>Property Map – enthält <em>Key-Value-Pairs</em></li>
-          <li>Zugriff über: <code>homogeneousMap.one<code></li>
-          <li>Oder: <code>homogeneousMap["one"]<code></li>
-        </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Functions-1"><div>
-      <section>
-        <header>
-          <h2>Function</h2>
-        </header>
-        <ul>
-          <li>
-            Funktionen sind Objekte: <em>"First-Class Objects"</em>
-            <ul>
-              <li>Eine Funktion kann einer Variablen zugewiesen werden.</li>
-              <li>Eine Funktion kann als Parameter übergeben werden.</li>
-              <li>Eine Funktion kann den Rückgabewert einer Funktion bilden.</li>
-            </ul>
-          </li>
-          <li>Funktionen können als Konstruktor für neue Objekte dienen
-            <br/>(durch Verwendung des <code>new</code>-Operators)</li>
-        </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Functions-2"><div>
-      <section>
-        <header>
-          <h2>Eine einfache Funktion</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code">function add(a, b) { </code>
-          <code class="lots-of-code">  return a + b; </code>
-          <code class="lots-of-code">} </code>
-          <code class="lots-of-code"> </code>
-          <code class="lots-of-code">var c = add(2, 2); </code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Functions-3"><div>
-      <section>
-        <header>
-          <h2>Eine Konstruktorfunktion</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code">function Car(color) { </code>
-          <code class="lots-of-code"> this.color = color;</code>
-          <code class="lots-of-code"> this.drive = function() { </code>
-          <code class="lots-of-code">   alert("Wroomm wroom"); </code>
-          <code class="lots-of-code"> }; </code>
-          <code class="lots-of-code">};  </code>
-          <code class="lots-of-code"> </code>
-        </pre>
-      </section>
-    </div></div>
-
-
-    <div class="slide" id="Functions-4"><div>
-      <section>
-        <header>
-          <h2>Verwendung einer Konstruktorfunktion</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code">var herbie = <mark>new</mark> Car("white"); </code>
-          <code class="lots-of-code"> </code>
-          <code class="lots-of-code">alert(herbie.color); </code>
-          <code class="lots-of-code">herbie.drive(); </code>
-        </pre>
-      </section>
-    </div></div>
-
-
-    <div class="slide" id="Einbindung"><div>
-      <section>
-        <strong>Einbindung von JavaScript-Dateien</strong>
-        <pre>
-          <code class="lots-of-code"> &lt;!doctype html&gt;</code>
-          <code class="lots-of-code">  &lt;html&gt; </code>
-          <code class="lots-of-code">    &lt;head&gt; </code>
-          <code class="lots-of-code">      &lt;title&gt;Das ist der Titel der Seite &lt;/title&gt; </code>
-          <code class="lots-of-code">      <mark>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; </mark></code>
-          <code class="lots-of-code">    &lt;/head&gt; </code>
-          <code class="lots-of-code">    (...) </code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Document-1"><div>
-      <section>
-        <header>
-          <h2>Das Document Object Model (DOM)</h2>
-        </header>
-          <ul>
-            <li><code>window.document</code> oder einfach nur <code>document</code></li>
-            <li>Repräsentiert das HTML-Dokument</li>
-            <li>Ermöglicht die Manipulation von HTML-Inhalten</li>
-          </ul>
-          <a href="https://developer.mozilla.org/en/DOM/document">https://developer.mozilla.org/en/DOM/document</a>
-      </section>
-    </div></div>
-
-    <div class="slide cover w" id="Document-2"><div>
-      <section>
-        <img src="pictures/javascript/dom.png" width="1155" height="724" alt="">
-      </section>
-    </div></div>
-
-    <div class="slide" id="Document-3"><div>
-      <section>
-        <header>
-          <h2>DOM-Manipulation mit JavaScript (Beispiele)</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code"> document.<mark>createElement</mark>("p"); </code>
-          <code class="lots-of-code"> document.<mark>createTextNode</mark>("Hello World!"); </code>
-          <code class="lots-of-code"> document.<mark>getElementById</mark>("footer"); </code>
-          <code class="lots-of-code"> document.<mark>getElementsByTagName</mark>("h1"); </code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Document-4"><div>
-      <section>
-        <header>
-          <h2>Hello World!</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code">window.onload = function() {</code>
-          <code class="lots-of-code">  var para = document.createElement("p");</code>
-          <code class="lots-of-code">  var body = document.getElementsByTagName("body")[0];</code>
-          <code class="lots-of-code">  body.appendChild(para);</code>
-          <code class="lots-of-code">  var text = document.createTextNode("Hello World!");</code>
-          <code class="lots-of-code">  para.appendChild(text);</code>
-          <code class="lots-of-code">}</code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Document-5"><div>
-      <section>
-        <header>
-          <h2>Auch nützlich:</h2>
-        </header>
-        <pre>
-          <code class="lots-of-code"> element.<mark>setAttribute</mark>("id", "eine-ID"); </code>
-          <code class="lots-of-code"> element.<mark>setAttribute</mark>("src", "datei.jpg"); </code>
-          <code class="lots-of-code"> element.<mark>innerHTML</mark> = "&lt;p&gt;Hallo Welt&lt;/p&gt;"; </code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Events-1"><div>
-      <section>
-        <header>
-          <h2>Event Handling</h2>
-        </header>
-
-        <ul>
-          <li>Reaktion auf Ereignisse: Event Handling</li>
-          <li>
-            JavaScript wird oft asynchron ausgeführt:
-            <ul>
-              <li>Code der auf Nutzereingaben reagiert.</li>
-              <li>Code der erst ausgeführt wird, wenn bestimmte Inhalte geladen sind.</li>
-            </ul>
-          </li>
-          <li>Vorteil: <em>Responsiveness</em> – Die Oberfläche wird nicht "blockiert".</li>
-          <li>Nachteil: Die Übersichtlichkeit des Codes kann leiden.</li>
-        </ul>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Events-2"><div>
-      <section>
-        <strong>HTML</strong>
-        <pre>
-        <code class="lots-of-code">&lt;button id=<mark>&quot;hallo&quot;</mark>&gt;Sag Hallo!&lt;/button&gt;</code>
-        </pre>
-
-        <strong>JavaScript Events</strong> (klassisch: <em>DOM Level 0</em>)
-        <pre>
-          <code class="lots-of-code">var <mark>meinElement</mark> = document.getElementById(<mark>"hallo"</mark>);</code>
-          <code class="lots-of-code"><mark>meinElement</mark>.onclick = function() {</code>
-          <code class="lots-of-code">  window.alert("Hallo Welt!");</code>
-          <code class="lots-of-code">}</code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Events-3"><div>
-      <section>
-        <header>
-          <h2>Reaktion auf Nutzereingaben (Beispiele: DOM Level 0)</h2>
-        </header>
-        <pre>
-        <code>element.<mark>onmouseover</mark> = function() {...}</code>
-        <code>element.<mark>onmouseout</mark> = function() {...}</code>
-        <code>element.<mark>onchange</mark> = function() {...}</code>
-        </pre>
-
-        <a href="https://developer.mozilla.org/en/DOM/element">
-          https://developer.mozilla.org/en/DOM/element
-        </a>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Events-4"><div>
-      <section>
-        <strong>HTML</strong>
-        <pre>
-        <code class="lots-of-code">&lt;button id=&quot;hello&quot;&gt;Sag Hallo!&lt;/button&gt;</code>
-        </pre>
-
-        <strong>JavaScript Events</strong> (modern: <em>DOM Level 2</em>)
-        <pre>
-          <code class="lots-of-code">function <mark>helloWorld</mark> () {</code>
-          <code class="lots-of-code">  window.alert("Hallo Welt!");</code>
-          <code class="lots-of-code">}</code>
-          <code class="lots-of-code">var <mark>meinElement</mark> = document.getElementById("hello");</code>
-          <code class="lots-of-code"><mark>meinElement</mark>.addEventListener("onclick", <mark>helloWorld</mark>)</code>
-        </pre>
-      </section>
-    </div></div>
-
-    <div class="slide" id="Events-5"><div>
-      <section>
-        <header>
-          <h2>Reaktion auf Nutzereingaben (Beispiele: DOM Level 2)</h2>
-        </header>
-        <pre>
-        <code>element.addEventListener("<mark>onmouseover</mark>", function() {...})</code>
-        <code>element.addEventListener("<mark>onmouseout</mark>", function() {...})</code>
-        <code>element.addEventListener("<mark>onchange</mark>", function() {...})</code>
-        </pre>
-
-        <a href="https://developer.mozilla.org/en/DOM/element">
-          https://developer.mozilla.org/en/DOM/element
-        </a>
-      </section>
-    </div></div>
-
-    <div class="slide cover h" id="Cover-AJAX"><div>
-      <section>
-        <img src="pictures/javascript/ajax.jpg" alt="">
       </section>
     </div></div>
 
@@ -398,7 +61,6 @@
 
       </section>
     </div></div>
-
 
     <div class="slide" id="XML-2"><div>
       <section>
@@ -457,7 +119,6 @@
       </section>
     </div></div>
 
-
     <div class="slide" id="JSON"><div>
       <section>
         <header>
@@ -480,6 +141,23 @@
       </section>
     </div></div>
 
+    <div class="slide" id="Objects"><div>
+      <section>
+        <header>
+          <h2>Wiederholung: Objekte in JavaScript</h2>
+        </header>
+        <pre>
+          <code class="lots-of-code">var emptyMap = <mark>{}</mark>;  </code>
+          <code class="lots-of-code">var homogenousMap = <mark>{one: 1, two: 2, three: 3};</mark></code>
+          <code class="lots-of-code">var heterogenousMap = <mark>{one: 1, two: "two", three: 3.0};</mark></code>
+        </pre>
+        <ul>
+          <li>Property Map – enthält <em>Key-Value-Pairs</em></li>
+          <li>Zugriff über: <code>homogeneousMap.one<code></li>
+          <li>Oder: <code>homogeneousMap["one"]<code></li>
+        </ul>
+      </section>
+    </div></div>
 
     <div class="slide" id="JSON-2"><div>
       <section>
