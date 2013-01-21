@@ -1,434 +1,391 @@
 <!DOCTYPE HTML>
 <html lang="de">
 <head>
-	<title>jQuery Workshop: 23. und 24. Juli 2012</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=1274, user-scalable=no">
-	<link rel="stylesheet" href="themes/gim/styles/style.css">
-	<!--
-		To apply styles to the certain slides
-		use slide ID to get needed elements
-		-->
-	<style>
-
-		#FitToWidth h2,
-		#FitToHeight h2 {
-			color:#FFF;
-			text-align:center;
-		}
-		
-		li li {
-			font-size: 26px;
-		}
-		
-		cite {
-			font-size: 20px;
-			padding-top: 2em;
-			display: block;
-		}
-		
-		a.source {
-			position: absolute;
-			z-index: 1000;
-			bottom: 0;
-			right: 15px;
-			color: white;
-			border: none;
-		}
-
-		header.captionized {
-			position: absolute;
-			z-index: 1000;
-			bottom: -1.5em;
-			height: 1em;
-			font-size: 1em;
-			text-align: center;
-		}
-		
-		header blockquote {
-			margin-top: 3em;
-			margin-left: 2em;
-		}
-		
-		.cover p,
-		.cover em,
-		.cover strong,
-		.cover pre code {
-			color: white;
-		}
-		
-	</style>
+  <title>JavaScript-Bibliotheken</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="themes/gim/styles/style.css">
 </head>
 <body class="list">
-	<header class="caption">
-		<h1>Einstieg in jQuery</h1>
-		<p>HTW Berlin, 23. und 24. Juli 2012</p>
-	</header>
-	
-	<div class="slide" id="Index"><div>
-		<section>
-			<header>
-				<h2>Workshop: jQuery</h2>
-			</header>
-			<strong>Themen im Rahmen dieses Workshops:</strong>
-			<ul>
-				<li>Verwendung von jQuery</li>
-				<li>Datenkapselung in JavaScript</li>
-				<li>Entwicklung einfacher jQuery-Plugins</li>
-			</ul>
-		</section>
-	</div></div>
 
-	<div class="slide" id="Libs-1"><div>
-		<section>
-			<header>
-				<h2>Warum JavaScript-Bibliotheken?</h2>
-			</header>
-			<p>
-				<strong>JavaScript-Programmierung im Browser ist nicht besonders effizient</strong>				
-			</p>
-			<ul>
-				<li>
-					Arbeiten mit dem DOM ist umständlich
-					<br/>(sehr viel Code notwendig, auch für einfache Manipulationen)
-				</li> 
-				<li>
-					JavaScript-Implementierung im Browser ist inkonsistent
-					<br/>(Anpassungen für verschiedene Browser notwendig)				
-				</li>
-			</ul>		
-		</section>
-	</div></div>
-	
-	<div class="slide" id="Libs-2"><div>
-		<section>
-			<header>
-				<h2>Warum JavaScript-Bibliotheken?</h2>
-			</header>
-			<p>
-				<strong>JavaScript-Bibliotheken...</strong>
-			</p>
-			<ul>
-				<li>lösen die beschriebenen Probleme</li>
-				<li>bieten zusätzliche Funktionalität</li>
-				<li>vereinfachen und beschleunigen die Entwicklung</li>
-			</ul>
-		</section>
-	</div></div>
+  <header class="meta">
+    <hgroup class="container">
+      <h1>Grundlagen der Webentwicklung <span>Wintersemester 2012</span></h1>
+    </hgroup>
+  </header>
 
-	<div class="slide" id="jQuery"><div>
-		<section>
-			<header>
-				<h2>Beispiel: jQuery</h2>
-			</header>
+  <section class="slides">
+
+    <header class="caption">
+      <h1>Einführung in jQuery</h1>
+    </header>
+
+		<div class="slide" id="Index"><div>
+			<section>
+				<header>
+					<h2>Workshop: jQuery</h2>
+				</header>
+				<strong>Themen im Rahmen dieses Workshops:</strong>
+				<ul>
+					<li>Verwendung von jQuery</li>
+					<li>Datenkapselung in JavaScript</li>
+					<li>Entwicklung einfacher jQuery-Plugins</li>
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide" id="Libs-1"><div>
+			<section>
+				<header>
+					<h2>Warum JavaScript-Bibliotheken?</h2>
+				</header>
 				<p>
-					<strong>Funktionalität</strong>
+					<strong>JavaScript-Programmierung im Browser ist nicht besonders effizient</strong>
 				</p>
 				<ul>
-					<li>DOM-Manipulation</li>
-					<li>Event-Handling</li>
-					<li>Ajax</li>
-					<li>Animationen und Effekte</li>
-					<li>Funktionalität kann durch Plugins erweitert werden.</li>					
+					<li>
+						Arbeiten mit dem DOM ist umständlich
+						<br/>(sehr viel Code notwendig, auch für einfache Manipulationen)
+					</li>
+					<li>
+						JavaScript-Implementierung im Browser ist inkonsistent
+						<br/>(Anpassungen für verschiedene Browser notwendig)
+					</li>
 				</ul>
-		</section>
-	</div></div>
+			</section>
+		</div></div>
 
-	
-	<div class="slide cover" id="Einbindung"><div>
-		<section>
-			<p>
-				<strong>jQuery ist eine einzelne JavaScript-Datei, die zusätzlich zu den eigenen Scripts eingebunden wird.</strong>
-			</p>
-			<pre>
-				<code class="lots-of-code"> &lt;!doctype html&gt;</code>
-				<code class="lots-of-code">  &lt;html&gt; </code>
-				<code class="lots-of-code">    &lt;head&gt; </code>
-				<code class="lots-of-code">      <mark>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt; </mark></code>
-				<code class="lots-of-code">      &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code>
-				<code class="lots-of-code">    &lt;/head&gt; </code>
-				<code class="lots-of-code">    (...) </code>
-			</pre>							
-		</section>
-	</div></div>
-	
-	<div class="slide" id="jQuery-1"><div>
-		<section>
-			<header>
-				<h2>jQuery: Grundlegende Funktionsweise</h2>
-			</header>
-			<p>
-				<code>$("li").addClass("photo");</code>
-			</p>
-			<ol>
-				<li>Finde Elemente im DOM.</li>
-				<li>Tu etwas mit diesen Elementen.</li>
-			</ol> 
-		</section>
-	</div></div>
-		
-	<div class="slide cover" id="jQuery-2"><div>
-		<section>
-			<p><strong>Das Dollar-Zeichen ist ein Platzhalter für <code>jQuery</code> .</strong></p>
-			<pre>
-				<em>Diese Zeile:</em>
-				<code><mark>$</mark>("li").addClass("photo");</code>
-				<br/><em>... enstpricht dieser Zeile:</em>
-				<code><mark>jQuery</mark>("li").addClass("photo");</code>
-			</pre>			
-		</section>
-	</div></div>		
-		
-	<div class="slide cover" id="jQuery-3"><div>
-		<section>
-			<p><strong>Die Auswahl der DOM-Elemente erfolgt durch CSS-Selektoren.</strong></p>
-			<pre>
-				<code>$("<mark>li</mark>")</code>
-				<code>$("<mark>.some-class</mark>")</code>
-				<code>$("<mark>#some-id</mark>")</code>
-				<code>$("<mark>.some-class img</mark>")</code>
-				<code>$("<mark>#some-id > input[type="radio"]</mark>")</code>
-			</pre>			
-		</section>
-	</div></div>
+		<div class="slide" id="Libs-2"><div>
+			<section>
+				<header>
+					<h2>Warum JavaScript-Bibliotheken?</h2>
+				</header>
+				<p>
+					<strong>JavaScript-Bibliotheken...</strong>
+				</p>
+				<ul>
+					<li>lösen die beschriebenen Probleme</li>
+					<li>bieten zusätzliche Funktionalität</li>
+					<li>vereinfachen und beschleunigen die Entwicklung</li>
+				</ul>
+			</section>
+		</div></div>
 
-	<div class="slide cover" id="jQuery-4"><div>
-		<section>
-			<p><strong>jQuery umfasst eine Vielzahl von Hilfsfunktionen für die Manipulation von Elementen. Hier einige Beispiele:</strong></p>
-			<pre>
-				<code>$("li").<mark>addClass</mark>("some-class");</code>
-				<code>$("li").<mark>removeClass</mark>("some-class");</code>
-				<code>$("li").<mark>show</mark>();</code>
-				<code>$("li").<mark>hide</mark>();</code>
-				<code>$("li").<mark>append</mark>(someElement);</code>
-				<code>$("li").<mark>remove</mark>(someElement);</code>
-			</pre>			
-		</section>
-	</div></div>
+		<div class="slide" id="jQuery"><div>
+			<section>
+				<header>
+					<h2>Beispiel: jQuery</h2>
+				</header>
+					<p>
+						<strong>Funktionalität</strong>
+					</p>
+					<ul>
+						<li>DOM-Manipulation</li>
+						<li>Event-Handling</li>
+						<li>Ajax</li>
+						<li>Animationen und Effekte</li>
+						<li>Funktionalität kann durch Plugins erweitert werden.</li>
+					</ul>
+			</section>
+		</div></div>
 
-	<div class="slide cover" id="jQuery-5"><div>
-		<section>
-			<p>
-			<strong>Zusammenfassung</strong>
-			</p>
-			<pre>
-				<p>
-					<code><mark>$</mark>("li").<mark>addClass</mark>("photo");</code>
-				</p>
-				<p>
-					<code><mark>$</mark>("li")</code>
-					<em>... finde <b>alle</b> <mark>li</mark>-Elemente im aktuellen Dokument.</em>
-				</p>
-				<p>
-					<code><mark>addClass</mark>("photo")</code>
-					<em>... füge <b>allen</b> gefundenen Elementen die Klasse „photo“ hinzu.</em>
-					<br/><em>(Wenn keine Elemente gefunden werden, passiert nichts)</em>
-				</p>
-				<p>
-				</p>
-			</pre> 
-		</section>
-	</div></div>
-	
-	<div class="slide" id="jQuery-6"><div>
-		<section>
-			<header>
-				<h2>Event-Handling mit jQuery</h2>
-			</header>
-			<p>
-				<strong><code>bind</code> kapselt die Eigenheiten verschiedener Browser in eine einfache, einheitliche API.</strong>
-			</p>
-			<pre>
-				<code>$('#foo').<mark>bind</mark>('<mark>click</mark>', function() {</code>
-				<code>  // do something when #foo is clicked</code>
-				<code>});</code>
-			</pre>
-		</section>
-	</div></div>
 
-	<div class="slide cover" id="jQuery-7"><div>
-		<section>
-			<p>
-			<strong>Beispiel: Event-Handling mit jQuery</strong>
-			</p>
-			<pre>
+		<div class="slide cover" id="Einbindung"><div>
+			<section>
 				<p>
-					<code>$('a').<mark>bind</mark>('click', <mark>someFunction</mark>)</code>
-					<em>... delegiert den Click-Event für <b>alle</b> <mark>a</mark>-Elemente des Dokuments</em>						
+					<strong>jQuery ist eine einzelne JavaScript-Datei, die zusätzlich zu den eigenen Scripts eingebunden wird.</strong>
 				</p>
-				<p>
-					<code>$('a').<mark>unbind</mark>('click', <mark>someFunction</mark>)</code>
-					<em>... entfernt den Event-Handler wieder von <b>allen</b> <mark>a</mark>-Elementen</em>						
-				</p>				
-			</pre> 
-		</section>
-	</div></div>
+				<pre>
+					<code class="lots-of-code"> &lt;!doctype html&gt;</code>
+					<code class="lots-of-code">  &lt;html&gt; </code>
+					<code class="lots-of-code">    &lt;head&gt; </code>
+					<code class="lots-of-code">      <mark>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt; </mark></code>
+					<code class="lots-of-code">      &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code>
+					<code class="lots-of-code">    &lt;/head&gt; </code>
+					<code class="lots-of-code">    (...) </code>
+				</pre>
+			</section>
+		</div></div>
 
-	<div class="slide cover" id="jQuery-8"><div>
-		<section>
-			<p>
-			<strong>Besonderheit: Der Document-Ready-Event</strong>
-			</p>
-			<pre>
+		<div class="slide" id="jQuery-1"><div>
+			<section>
+				<header>
+					<h2>jQuery: Grundlegende Funktionsweise</h2>
+				</header>
 				<p>
-					<code><mark>window</mark>.<mark>onload</mark> = function() {</code>
-					<code>  // this code is run when the website is loaded </code>
-					<code>  // (including images, etc.)</code>
-					<code>};</code>
+					<code>$("li").addClass("photo");</code>
 				</p>
+				<ol>
+					<li>Finde Elemente im DOM.</li>
+					<li>Tu etwas mit diesen Elementen.</li>
+				</ol>
+			</section>
+		</div></div>
 
+		<div class="slide cover" id="jQuery-2"><div>
+			<section>
+				<p><strong>Das Dollar-Zeichen ist ein Platzhalter für <code>jQuery</code> .</strong></p>
+				<pre>
+					<em>Diese Zeile:</em>
+					<code><mark>$</mark>("li").addClass("photo");</code>
+					<br/><em>... enstpricht dieser Zeile:</em>
+					<code><mark>jQuery</mark>("li").addClass("photo");</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="jQuery-3"><div>
+			<section>
+				<p><strong>Die Auswahl der DOM-Elemente erfolgt durch CSS-Selektoren.</strong></p>
+				<pre>
+					<code>$("<mark>li</mark>")</code>
+					<code>$("<mark>.some-class</mark>")</code>
+					<code>$("<mark>#some-id</mark>")</code>
+					<code>$("<mark>.some-class img</mark>")</code>
+					<code>$("<mark>#some-id > input[type="radio"]</mark>")</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="jQuery-4"><div>
+			<section>
+				<p><strong>jQuery umfasst eine Vielzahl von Hilfsfunktionen für die Manipulation von Elementen. Hier einige Beispiele:</strong></p>
+				<pre>
+					<code>$("li").<mark>addClass</mark>("some-class");</code>
+					<code>$("li").<mark>removeClass</mark>("some-class");</code>
+					<code>$("li").<mark>show</mark>();</code>
+					<code>$("li").<mark>hide</mark>();</code>
+					<code>$("li").<mark>append</mark>(someElement);</code>
+					<code>$("li").<mark>remove</mark>(someElement);</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="jQuery-5"><div>
+			<section>
 				<p>
-					<code>$(<mark>document</mark>).<mark>ready</mark>(function() {</code>
-					<code>  // this code is run when the DOM is loaded</code>
-					<code>  // (without images, etc. – much faster!)</code>					
+				<strong>Zusammenfassung</strong>
+				</p>
+				<pre>
+					<p>
+						<code><mark>$</mark>("li").<mark>addClass</mark>("photo");</code>
+					</p>
+					<p>
+						<code><mark>$</mark>("li")</code>
+						<em>... finde <b>alle</b> <mark>li</mark>-Elemente im aktuellen Dokument.</em>
+					</p>
+					<p>
+						<code><mark>addClass</mark>("photo")</code>
+						<em>... füge <b>allen</b> gefundenen Elementen die Klasse „photo“ hinzu.</em>
+						<br/><em>(Wenn keine Elemente gefunden werden, passiert nichts)</em>
+					</p>
+					<p>
+					</p>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide" id="jQuery-6"><div>
+			<section>
+				<header>
+					<h2>Event-Handling mit jQuery</h2>
+				</header>
+				<p>
+					<strong><code>bind</code> kapselt die Eigenheiten verschiedener Browser in eine einfache, einheitliche API.</strong>
+				</p>
+				<pre>
+					<code>$('#foo').<mark>bind</mark>('<mark>click</mark>', function() {</code>
+					<code>  // do something when #foo is clicked</code>
 					<code>});</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="jQuery-7"><div>
+			<section>
+				<p>
+				<strong>Beispiel: Event-Handling mit jQuery</strong>
 				</p>
-			</pre> 
-		</section>
-	</div></div>
-		
-	<div class="slide" id="jQuery-9"><div>
-		<section>
-			<header>
-				<h2>Asynchrone Kommunikation mit jQuery</h2>
-			</header>
-			<ul>
-				<li><code>$.ajax</code>-API in jQuery</li>
-				<li>kapselt die Eigenheiten verschiedener Browser in eine einfache API</li>
-				<li>integriert auch verwandte Techniken wie JSONP</li>
-			</ul> 
-		</section>
-	</div></div>
-	
-	<div class="slide cover" id="jQuery-10"><div>
-		<section>
-			<p>
-			<strong>Beispiel: AJAX mit jQuery</strong>
-			</p>
-			<pre>
-				<code><mark>$.ajax({</code>
-				<code>  url: "/data/",</code>
-				<code>  <mark>success</mark>: function(data){</code>
-				<code>    $("#results").append(data);</code>
-				<code>  }</code>
-				<code>});</code>
-			</pre> 
-		</section>
-	</div></div>
+				<pre>
+					<p>
+						<code>$('a').<mark>bind</mark>('click', <mark>someFunction</mark>)</code>
+						<em>... delegiert den Click-Event für <b>alle</b> <mark>a</mark>-Elemente des Dokuments</em>
+					</p>
+					<p>
+						<code>$('a').<mark>unbind</mark>('click', <mark>someFunction</mark>)</code>
+						<em>... entfernt den Event-Handler wieder von <b>allen</b> <mark>a</mark>-Elementen</em>
+					</p>
+				</pre>
+			</section>
+		</div></div>
 
-	<div class="slide cover" id="jQuery-11"><div>
-		<section>
-			<p>
-			<strong>Beispiel: JSONP mit jQuery</strong>
-			</p>
-			<pre>
-				<code>$.ajax({</code>
-				<code>  url: "http://some-domain.com/jsonp/",</code>
-				<code>  <mark>dataType</mark>: '<mark>jsonp</mark>',</code>
-				<code>  success: function(data){</code>
-				<code>    $("#results").append(data);</code>
-				<code>  }</code>
-				<code>});</code>
-			</pre> 
-		</section>
-	</div></div>
+		<div class="slide cover" id="jQuery-8"><div>
+			<section>
+				<p>
+				<strong>Besonderheit: Der Document-Ready-Event</strong>
+				</p>
+				<pre>
+					<p>
+						<code><mark>window</mark>.<mark>onload</mark> = function() {</code>
+						<code>  // this code is run when the website is loaded </code>
+						<code>  // (including images, etc.)</code>
+						<code>};</code>
+					</p>
 
-	<div class="slide" id="scope-1"><div>
-		<section>
-			<header>
-				<h2>Exkurs: Sichtbarkeit von Variablen in JavaScript</h2>
-			</header>
-			<ul>
-				<li><em>lokale Variablen</em> (functional scope)	
-					<ul>
-						<li>sichtbar in der Funktion in der sie deklariert wurden</li>
-					</ul>
-				</li>
-			</ul>
-			<ul>
-				<li><em>globale Variablen</em> (global scope) – Eigenschaften des <code>window</code>-Objekts 
-					<ul>
-						<li>Variablen die außerhalb einer Funktion deklariert wurden</li>
-						<li>Variablen die nicht explizit deklariert wurden</li>
-					</ul>
-				</li>
-			</ul> 
-		</section>
-	</div></div>
+					<p>
+						<code>$(<mark>document</mark>).<mark>ready</mark>(function() {</code>
+						<code>  // this code is run when the DOM is loaded</code>
+						<code>  // (without images, etc. – much faster!)</code>
+						<code>});</code>
+					</p>
+				</pre>
+			</section>
+		</div></div>
 
-	<div class="slide" id="scope-2"><div>
-		<section>
-			<header>
-				<h2>Das IIFE-Pattern</h2>
-			</header>
-			<pre>
-				<code>(function(){</code>
-				<code>  // local scope</code>
-				<code>})();</code>
-			</pre>
-			<ul>
-				<li>IIFE – <em>Immediately-Invoked Function Expression</em></li>
-				<li>erzeugt lokalen Scope innerhalb einer anonymen Funktion </li>
-			</ul> 
-		</section>
-	</div></div>
-	
-	<div class="slide cover" id="information-hiding"><div>
-		<section>
-			<pre>
-				<code>(function(<mark>$</mark>){</code>
-				<code>  </code>
-				<code>  // private code goes here:</code>
-				<code>  // (...)</code>
-				<code>  </code>
-				<code>  // make functionality public through the jQuery-object:</code>
-				<code>  <mark>$</mark>.<mark>fn</mark>.myJQueryPlugin = function() {</code>
-				<code>    // (...)</code>
-				<code>  }</code>
-				<code>})(<mark>jQuery</mark>);</code>
-			</pre>
-		</section>
-	</div></div>
-
-	<div class="slide" id="Background"><div>
-		<section>
-			<header>
-				<h2>Zum Weiterlesen</h2>
-			</header>
-
+		<div class="slide" id="jQuery-9"><div>
+			<section>
+				<header>
+					<h2>Asynchrone Kommunikation mit jQuery</h2>
+				</header>
 				<ul>
-					<li>
-						<a href="http://docs.jquery.com/Main_Page">Offizielle jQuery-Dokumentation</a>
-					</li>
-					<li>
-						<a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Ben Alman über IIFE</a>
-					</li>
-					<li>
-						<a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/">Addy Osmani über jQuery Plugin Patterns</a>
-					</li>
-					<li>
-						<a href="http://jqueryboilerplate.com/">jQuery Boilerplate – alternativer Ansatz für jQuery Plugins</a>
-					</li>				
+					<li><code>$.ajax</code>-API in jQuery</li>
+					<li>kapselt die Eigenheiten verschiedener Browser in eine einfache API</li>
+					<li>integriert auch verwandte Techniken wie JSONP</li>
 				</ul>
-		</section>
-	</div></div>
-					
-	<div class="slide" id="ThankYou"><div>
-		<section>
-			<header>
-				<h2>Fragen?</h2>
-			</header>
-			<p>Simon Jockers<br/>
-				<a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
-		</section>
-	</div></div>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"><div></div></div>
-	<script src="scripts/script.js"></script>
-	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
-	<!-- Photos by John Carey — fiftyfootshadows.net -->
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="jQuery-10"><div>
+			<section>
+				<p>
+				<strong>Beispiel: AJAX mit jQuery</strong>
+				</p>
+				<pre>
+					<code><mark>$.ajax({</code>
+					<code>  url: "/data/",</code>
+					<code>  <mark>success</mark>: function(data){</code>
+					<code>    $("#results").append(data);</code>
+					<code>  }</code>
+					<code>});</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="jQuery-11"><div>
+			<section>
+				<p>
+				<strong>Beispiel: JSONP mit jQuery</strong>
+				</p>
+				<pre>
+					<code>$.ajax({</code>
+					<code>  url: "http://some-domain.com/jsonp/",</code>
+					<code>  <mark>dataType</mark>: '<mark>jsonp</mark>',</code>
+					<code>  success: function(data){</code>
+					<code>    $("#results").append(data);</code>
+					<code>  }</code>
+					<code>});</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide" id="scope-1"><div>
+			<section>
+				<header>
+					<h2>Exkurs: Sichtbarkeit von Variablen in JavaScript</h2>
+				</header>
+				<ul>
+					<li><em>lokale Variablen</em> (functional scope)
+						<ul>
+							<li>sichtbar in der Funktion in der sie deklariert wurden</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li><em>globale Variablen</em> (global scope) – Eigenschaften des <code>window</code>-Objekts
+						<ul>
+							<li>Variablen die außerhalb einer Funktion deklariert wurden</li>
+							<li>Variablen die nicht explizit deklariert wurden</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide" id="scope-2"><div>
+			<section>
+				<header>
+					<h2>Das IIFE-Pattern</h2>
+				</header>
+				<pre>
+					<code>(function(){</code>
+					<code>  // local scope</code>
+					<code>})();</code>
+				</pre>
+				<ul>
+					<li>IIFE – <em>Immediately-Invoked Function Expression</em></li>
+					<li>erzeugt lokalen Scope innerhalb einer anonymen Funktion </li>
+				</ul>
+			</section>
+		</div></div>
+
+		<div class="slide cover" id="information-hiding"><div>
+			<section>
+				<pre>
+					<code>(function(<mark>$</mark>){</code>
+					<code>  </code>
+					<code>  // private code goes here:</code>
+					<code>  // (...)</code>
+					<code>  </code>
+					<code>  // make functionality public through the jQuery-object:</code>
+					<code>  <mark>$</mark>.<mark>fn</mark>.myJQueryPlugin = function() {</code>
+					<code>    // (...)</code>
+					<code>  }</code>
+					<code>})(<mark>jQuery</mark>);</code>
+				</pre>
+			</section>
+		</div></div>
+
+		<div class="slide" id="Background"><div>
+			<section>
+				<header>
+					<h2>Zum Weiterlesen</h2>
+				</header>
+
+					<ul>
+						<li>
+							<a href="http://docs.jquery.com/Main_Page">Offizielle jQuery-Dokumentation</a>
+						</li>
+						<li>
+							<a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Ben Alman über IIFE</a>
+						</li>
+						<li>
+							<a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/">Addy Osmani über jQuery Plugin Patterns</a>
+						</li>
+						<li>
+							<a href="http://jqueryboilerplate.com/">jQuery Boilerplate – alternativer Ansatz für jQuery Plugins</a>
+						</li>
+					</ul>
+			</section>
+		</div></div>
+
+		<div class="slide" id="ThankYou"><div>
+			<section>
+				<header>
+					<h2>Fragen?</h2>
+				</header>
+				<p>Simon Jockers<br/>
+					<a href="mailto:jockers@htw-berlin.de">jockers@htw-berlin.de</a></p>
+			</section>
+		</div></div>
+
+  </section>
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+  <!-- Photos by John Carey — fiftyfootshadows.net -->
 </body>
 </html>
