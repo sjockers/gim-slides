@@ -118,7 +118,6 @@ h1, h2, h3 {
 }
 .slide kbd,
 .slide code {
-	padding: 3px 8px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
